@@ -1,0 +1,301 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #FEEAF0;
+    --secondary-color: #F09410;
+    --color-tree: #BC430D;
+    --shadow: 2px 15px 20px  #000;
+    --redondes: 10px;
+}
+
+html {
+    height: 100%;
+    font-size: 62.5%;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 100vh;
+    height: 100%;
+    background-color: var(--primary-color);   
+}
+
+#container {
+    /* width: 80%;
+    max-width: 40vw;
+    height: 90%; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url(https://img.freepik.com/foto-gratis/fondo-abstracto-azul-formas-geometricas_24972-1841.jpg?ga=GA1.1.1413192543.1730669752&semt=ais_hybrid);
+    background-repeat: no-repeat;
+    background-size: cover;
+    box-shadow:  var(--shadow);    
+}
+
+.btn {
+    width: 100%;
+    border-radius: 10px;
+    border: none;
+    padding: 10px;
+    color: var(--secondary-color);
+    background-color: var(--color-tree);
+    font-size: 2.5rem;
+    cursor: pointer;
+
+    &:hover {
+        background-color: var(--secondary-color);
+        border: 1px solid var(--primary-color);
+        color: var(--primary-color);
+    }
+}
+
+.btn-2 {
+    /* width: 40%; */
+    border-radius: 10px;
+    border: none;
+    padding: 10px;
+    color: var(--primary-color);
+    background-color: var(--color-tree);
+    font-size: 2rem;
+
+    &:hover {
+        background-color: white;
+        border: 1px solid #8c9096;
+        color: #8c9096;
+    }
+}
+
+header {
+    width: 100%;
+    background-color: var(--secondary-color);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    /* position: relative; */
+    bottom: 100%;
+    transition: bottom 0.5s ease;
+    /* display: none; */
+
+
+    /* stilos del logo */
+    a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-decoration: none;
+
+        img {
+           width: 70px;
+           height: 70px;
+        }
+   
+        h1 {
+            
+            color: var(--primary-color);
+            font-size: 5rem;
+        }
+    }
+    
+
+    nav {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+
+        #imgHeader {
+            background-color: white;
+            height: 100px;
+            aspect-ratio: 1;
+            margin-right: 10px;
+            border-radius: 50%;
+            background-image: url(https://st4.depositphotos.com/7402484/31013/i/450/depositphotos_310131004-stock-photo-red-parrot-scarlet-macaw-ara.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+        }
+    
+        &:hover {
+            ul {
+                visibility: visible;
+                cursor: pointer;
+            }
+        }
+    
+        ul {
+            list-style: none;
+            color: var(--secondary-color);
+            position: absolute;
+            /* z-index: 1; */
+            /* visibility: hidden; */
+            
+            
+            li {
+                font-size: 2.5rem;
+                position: relative;
+                top: 74px;
+                left: -80px;
+                background-color: var(--primary-color);
+                padding: 5px;
+
+                &:hover {
+                    background-color: var(--secondary-color);
+                    color: var(--primary-color);
+                }
+            }
+        }
+    }
+
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    
+    
+    /* Formulario de inicio de sesión */
+    
+    section {
+        width: 100%;
+        max-width: 50vw;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 10px 5px 10px var(--shadow);
+        /* display: none; */
+
+        
+        form {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 10px;
+    
+            h2 {
+                text-align: center;
+                color: var(--color-tree);
+                font-size: 3rem;
+            }
+            
+            label {
+                font-size: 2.5rem;
+                margin-top: 5px;
+                color: var(--color-tree);
+            }
+            
+            input {
+                padding: 10px;
+                border-radius: var(--redondes);
+                background-color: var(--secondary-color);
+                font-size: 1.5rem;
+
+                &:hover {
+                    background-color: var(--primary-color);
+                    transform: scale(1.05);
+                }
+            }
+    
+            /* @media(min-width: 768px) {
+                body {
+                    display: flex;
+                    flex-direction: column;
+                }
+                #initSection, #register, #perfil {
+                    width: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    
+                }
+                
+            } */
+            
+        }
+        
+        p {
+        color: red;
+            font-size: 3rem;
+            text-align: center;
+            margin-top: 15px;
+        }
+
+        #none_init, #none_reg, #none_perfil {
+            color: var(--color-tree);
+            font-weight: 700;
+            font-size: 2rem;
+        }
+    }
+
+    #perfil {
+        
+        .perfil {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+    
+        }
+    
+        #imgChange {
+            width: 50%;
+            aspect-ratio: 1;
+            align-self: center;
+            border-radius: 50%;
+            background-image: url(https://st4.depositphotos.com/7402484/31013/i/450/depositphotos_310131004-stock-photo-red-parrot-scarlet-macaw-ara.jpg);
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+           
+            /* height: 120px;
+            font-size: 2rem;
+            text-align: center;
+            margin-top: 15px; */
+        }
+    
+        h2 {
+            text-align: center;
+            color: #0C66E4;
+            font-size: 3rem;
+        }
+    }
+}
+
+.show-card {
+    animation: show-card 1s ease normal backwards;
+}
+
+.hide-card {
+    animation: hide-card 500ms ease normal forwards;
+}
+
+@keyframes hide-card {
+    from {
+        transform: rotateX(0deg) rotateY(0deg);
+    }
+    to {
+        transform: rotateX(90deg) rotateY(-90deg);
+    }
+}
+
+@keyframes show-card {
+    0% {
+        transform: rotateX(90deg) rotateY(90deg);
+    }
+    100% {
+        transform: rotateX(0deg) rotateY(0deg);
+    }
+}

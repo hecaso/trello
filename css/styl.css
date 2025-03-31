@@ -1,0 +1,412 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-color: #ffffff;
+  --secondary-color: #fee659;
+  --color-tree: #cddc49;
+  --shadow: 5px 5px 5px #ff0000;
+  --redondes: 10px;
+}
+
+html {
+  height: 100%;
+  font-size: 62.5%;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background-image: url(https://www.mediasource.mx/hubfs/blog-files/fondos-web.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 100%;
+  height: 100%;
+  /* background-color: var(--secondary-color);    */
+}
+
+#container {
+  /* width: 80%;
+    max-width: 40vw;
+    height: 90%; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url(https://us.123rf.com/450wm/sputanski/sputanski1606/sputanski160600010/60393187-resumen-de-vectores-de-colores-de-fondo-material-de-la-plaza-para-el-sitio-web-tel%C3%A9fono-impresi%C3%B3n.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  box-shadow: var(--shadow);
+}
+
+.btn {
+  width: 100%;
+  border-radius: 10px;
+  border: none;
+  padding: 10px;
+  color: var(--secondary-color);
+  background-color: var(--primary-color);
+  font-size: 2.5rem;
+  cursor: pointer;
+
+  &:hover {
+    background-color: var(--secondary-color);
+    border: 1px solid var(--primary-color);
+    color: var(--primary-color);
+  }
+}
+
+.btn-2 {
+  /* width: 40%; */
+  border-radius: 10px;
+  border: none;
+  padding: 10px;
+  color: var(--primary-color);
+  background-color: var(--color-tree);
+  font-size: 2rem;
+
+  &:hover {
+    background-color: white;
+    border: 1px solid #8c9096;
+    color: #8c9096;
+  }
+}
+
+header {
+  width: 100%;
+  background-image: url(https://cdn2.hubspot.net/hub/53/hubfs/Descarga%20de%20fondos%20para%20pa%CC%81ginas%20web.jpg?width=595&name=Descarga%20de%20fondos%20para%20pa%CC%81ginas%20web.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-color: var(--primary-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: -20vh;
+  transition: top 0.5s ease;
+  z-index: 1;
+  /* display: none; */
+
+  /* stilos del logo */
+  a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+
+    img {
+      width: 70px;
+      height: 70px;
+    }
+
+    h1 {
+      color: var(--secondary-color);
+      font-size: 5rem;
+    }
+  }
+
+  nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    position: relative;
+
+    #imgHeader {
+      background-color: var(--primary-color);
+      height: 20vh;
+      aspect-ratio: 1;
+      margin-right: 10px;
+      border-radius: 50%;
+      background-image: url(https://st4.depositphotos.com/7402484/31013/i/450/depositphotos_310131004-stock-photo-red-parrot-scarlet-macaw-ara.jpg);
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+    }
+
+    &:hover {
+      ul {
+        visibility: visible;
+        cursor: pointer;
+      }
+    }
+
+    ul {
+      list-style: none;
+      color: var(--secondary-color);
+      position: absolute;
+      top: 0;
+      right: 0;
+      /* z-index: 1; */
+      visibility: hidden;
+
+      li {
+        font-size: 2.5rem;
+        position: relative;
+        bottom: -20vh;
+        left: -40px;
+        background-color: var(--primary-color);
+        padding: 5px;
+
+        &:hover {
+          background-color: var(--secondary-color);
+          color: var(--primary-color);
+        }
+      }
+    }
+  }
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+
+  /* Formulario de inicio de sesión */
+
+  section {
+    width: 100%;
+    max-width: 50vw;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 10px 5px 10px var(--shadow);
+    display: none;
+
+    form {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+
+      h2 {
+        text-align: center;
+        color: var(--primary-color);
+        font-size: 3rem;
+      }
+
+      label {
+        font-size: 2.5rem;
+        margin-top: 5px;
+        color: var(--primary-color);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      input, textarea {
+        padding: 10px;
+        border-radius: var(--redondes);
+        background-color: var(--secondary-color);
+        font-size: 2rem;
+        resize: vertical;
+
+        &:hover {
+          background-color: var(--primary-color);
+          transform: scale(1.05);
+        }
+
+      }
+
+      /* @media(min-width: 768px) {
+                body {
+                    display: flex;
+                    flex-direction: column;
+                }
+                #initSection, #register, #perfil {
+                    width: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    
+                }
+                
+            } */
+    }
+
+    p {
+      color: red;
+      font-size: 3rem;
+      text-align: center;
+      margin-top: 15px;
+    }
+
+    #none_init,
+    #none_reg,
+    #none_perfil {
+      color: var(--primary-color);
+      font-weight: 700;
+      font-size: 2rem;
+    }
+  }
+
+  #perfil {
+    .perfil {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+    }
+
+    #imgChange {
+      width: 50%;
+      aspect-ratio: 1;
+      align-self: center;
+      border-radius: 50%;
+      background-image: url(https://st4.depositphotos.com/7402484/31013/i/450/depositphotos_310131004-stock-photo-red-parrot-scarlet-macaw-ara.jpg);
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+
+      /* height: 120px;
+            font-size: 2rem;
+            text-align: center;
+            margin-top: 15px; */
+    }
+
+    h2 {
+      text-align: center;
+      color: white;
+      font-size: 3rem;
+    }
+  }
+
+
+.show-card {
+  animation: show-card 1s ease normal backwards;
+}
+
+.hide-card {
+  animation: hide-card 500ms ease normal forwards;
+}
+
+@keyframes hide-card {
+  from {
+    transform: rotateX(0deg) rotateY(0deg);
+  }
+  to {
+    transform: rotateX(90deg) rotateY(-90deg);
+  }
+}
+
+@keyframes show-card {
+  0% {
+    transform: rotateX(90deg) rotateY(90deg);
+  }
+  100% {
+    transform: rotateX(0deg) rotateY(0deg);
+  }
+}
+
+#cont-notes {
+  /* background-image: url(https://us.123rf.com/450wm/sputanski/sputanski1606/sputanski160600010/60393187-resumen-de-vectores-de-colores-de-fondo-material-de-la-plaza-para-el-sitio-web-tel%C3%A9fono-impresi%C3%B3n.jpg); */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: calc(100vh - 20vh);
+  background-color: red;
+  margin-top: 20vh;
+  overflow-y: scroll;
+  
+  .form-notes {
+    margin-top: 30vh;
+    background-color: red;
+    padding: 20px;
+    gap: 10px;
+    background-color: #9be2f8;
+    border-radius: 15px;
+
+    h2 {
+      text-align: center;
+      color: var(--primary-color);
+      font-size: 3rem;
+    }
+
+    #note-desc-input {
+      display: flex;
+    }
+
+    #btn-2 {
+      width: 80%;
+      align-items: center;
+    }
+
+  }
+
+  #notes {
+    /* background-color: burlywood; */
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    
+
+    .memo {
+        background-color: #fee659;
+        border: 1px solid #f7d2c4;
+        border-radius: 5px;
+        padding: 20px;
+        top: 20px;
+
+        strong {
+            font-size: 2rem;
+        }
+
+        p {
+            font-size: 1.8rem;
+            color: #8c9096;
+            text-align: justify;
+        }
+
+        select {
+          margin-top: 15px;
+          font-size: 1.5rem;
+          padding: 5px;
+          border-radius: 5px;
+          font-weight: 700;
+          border: none;
+
+          &:focus {
+            outline: none;
+          }
+
+          /* &:option:nth-child(1){
+            color: orange;
+          }
+
+          &:option:nth-child(2){
+            color: green;
+          }
+
+          &:option:nth-child(2){
+            color: red;
+          } */
+        }
+
+        /* .state {
+            font-size: 1.5rem;
+            color: black;
+            font-weight: bold;
+            text-align: right;
+        } */
+    }
+  }
+}
+}

@@ -1,0 +1,638 @@
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+html {
+  height: 100%;
+  font-size: 62.5%;
+}
+
+body {
+  background-image: url("https://www.mediasource.mx/hubfs/blog-files/fondos-web.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 100%;
+  height: 100%;
+}
+
+header {
+  width: 100%;
+  background-image: url(https://cdn2.hubspot.net/hub/53/hubfs/Descarga%20de%20fondos%20para%20pa%CC%81ginas%20web.jpg?width=595&name=Descarga%20de%20fondos%20para%20pa%CC%81ginas%20web.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-color: var(--primary-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  height: var(--header-height);
+  left: 0;
+  right: 0;
+  top: calc(var(--header-height) * -1);
+  transition: top 0.5s ease;
+  z-index: 1;
+
+  /* stilos del logo */
+  a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+
+    img {
+      height: var(--header-height);
+    }
+
+    h1 {
+      color: var(--secondary-color);
+      font-size: 4rem;
+    }
+  }
+
+  nav {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+
+    label {
+      display: none;
+
+      /* .hamburguer {
+        width: 2.9vw;
+      } */
+
+      input {
+        display: none;
+      }
+    }
+
+    div {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      .subtitle {
+        font-size: calc(var(--header-height) / 3);
+        font-weight: bold;
+        align-items: center;
+        overflow-wrap: anywhere;
+        color: var(--secondary-color);
+      }
+
+      #imgHeader {
+        background-color: var(--primary-color);
+        height: var(--header-height);
+        aspect-ratio: 1;
+        margin-right: 1rem;
+        border-radius: 50%;
+        object-fit: cover;
+        /* background-image: url("https://st4.depositphotos.com/7402484/31013/i/450/depositphotos_310131004-stock-photo-red-parrot-scarlet-macaw-ara.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center; */
+      }
+
+      &:hover {
+        ul {
+          visibility: visible;
+        }
+      }
+    }
+
+    .hide-list {
+      ul {
+        visibility: hidden;
+      }
+    }
+
+    ul {
+      display: flex;
+      flex-direction: column;
+      list-style: none;
+      color: var(--secondary-color);
+      position: absolute;
+      top: 100%;
+      right: 1rem;
+      /* z-index: 1; */
+      visibility: hidden;
+
+      li {
+        font-size: 2.5rem;
+        background-color: var(--primary-color);
+        padding: 0.5rem;
+
+        &:hover {
+          background-color: var(--secondary-color);
+          color: red;
+        }
+      }
+    }
+  }
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+
+  .container {
+    display: none;
+    border-radius: var(--redondes);
+    justify-content: center;
+    align-items: center;
+    background-image: url("https://us.123rf.com/450wm/sputanski/sputanski1606/sputanski160600010/60393187-resumen-de-vectores-de-colores-de-fondo-material-de-la-plaza-para-el-sitio-web-tel%C3%A9fono-impresi%C3%B3n.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    box-shadow: var(--shadow);
+
+    section {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+      padding: 2rem;
+      /* display: none; */
+
+      form {
+        width: 100%;
+        max-width: 50vw;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 0.2rem;
+
+        h2 {
+          text-align: center;
+          color: var(--primary-color);
+          font-size: 3rem;
+        }
+
+        label {
+          width: 100%;
+          font-size: 2.5vh;
+          margin-top: 0.5rem;
+          color: var(--primary-color);
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+        }
+        input,
+        textarea {
+          width: 100%;
+          padding: 1vh;
+          border-radius: var(--redondes);
+          background-color: var(--secondary-color);
+          font-size: 1.5rem;
+          resize: vertical;
+
+          &:hover {
+            background-color: var(--primary-color);
+            transform: scale(1.05);
+          }
+        }
+        .btn {
+          width: 100%;
+          border-radius: var(--redondes);
+          border: none;
+          padding: 1rem;
+          color: var(--secondary-color);
+          background-color: var(--primary-color);
+          font-size: 2rem;
+          cursor: pointer;
+
+          &:hover {
+            background-color: var(--secondary-color);
+            border: 0.2rem solid var(--primary-color);
+            color: var(--primary-color);
+          }
+        }
+
+        #imgChange {
+          width: 50%;
+          aspect-ratio: 1;
+          align-self: center;
+          border-radius: 50%;
+          object-fit: cover;
+          margin: auto;
+          background-color: var(--primary-color);
+          /* background-image: url(https://st4.depositphotos.com/7402484/31013/i/450/depositphotos_310131004-stock-photo-red-parrot-scarlet-macaw-ara.jpg);
+          background-size: cover;
+          background-position: center;
+          background-repeat: no-repeat; */
+
+          /* height: 120px;
+                  font-size: 2rem;
+                  text-align: center;
+                  margin-top: 15px; */
+        }
+
+        .btn-2 {
+          /* width: 40%; */
+          border-radius: 10px;
+          border: none;
+          padding: 10px;
+          color: var(--primary-color);
+          background-color: var(--color-tree);
+          font-size: 2rem;
+          margin-top: 1rem;
+
+          &:hover {
+            background-color: white;
+            border: 1px solid #8c9096;
+            color: #8c9096;
+          }
+        }
+      }
+      .error-p {
+        color: red;
+        font-size: 2rem;
+        text-align: center;
+      }
+      .error-p + a {
+        width: 100%;
+        color: var(--primary-color);
+        font-weight: 700;
+        font-size: 1.5rem;
+        text-align: center;
+      }
+    }
+  }
+
+  .cont-notes {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    /* background-image: url("https://us.123rf.com/450wm/sputanski/sputanski1606/sputanski160600010/60393187-resumen-de-vectores-de-colores-de-fondo-material-de-la-plaza-para-el-sitio-web-tel%C3%A9fono-impresi%C3%B3n.jpg"); */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url("data:image/svg+xml,<svg id='patternId' width='100%' height='100%' xmlns='http://www.w3.org/2000/svg'><defs><pattern id='a' patternUnits='userSpaceOnUse' width='50' height='50' patternTransform='scale(1) rotate(0)'><rect x='0' y='0' width='100%' height='100%' fill='hsla(240,6.7%,17.6%,1)'/><path d='M25 3.95L22.3 9.2c-1.45 2.75-.95 6.15 1.25 8.35L25 19l1.45-1.45c2.15-2.2 2.65-5.6 1.25-8.35zm0 7.5c.85 0 1.5.7 1.5 1.5 0 .85-.65 1.5-1.5 1.5s-1.5-.7-1.5-1.5c0-.85.65-1.5 1.5-1.5zm-13.1.45l.75 5.6c.15 1.15 1 2.05 2.1 2.35l6.8 1.7-1.7-6.8c-.25-1.1-1.2-1.95-2.35-2.1zm26.2 0l-5.6.75c-1.15.15-2.05 1-2.35 2.1l-1.7 6.8 6.8-1.7c1.1-.25 1.95-1.2 2.1-2.35zm-21.4 3.4c.75 0 1.4.6 1.4 1.4 0 .4-.15.75-.4 1s-.6.4-1 .4c-.75 0-1.4-.6-1.4-1.4 0-.35.15-.75.4-1s.6-.4 1-.4zm16.55 0c.4 0 .75.15 1 .4s.4.6.4 1c0 .75-.6 1.4-1.4 1.4-.4 0-.75-.15-1-.4s-.4-.6-.4-1c0-.75.6-1.4 1.4-1.4zm4.28 6.179a7.102 7.102 0 00-5.08 2.072L31 25l1.45 1.45c2.2 2.15 5.6 2.65 8.35 1.25l5.25-2.7-5.25-2.7a7.126 7.126 0 00-3.27-.821zm-25.06.035a7.267 7.267 0 00-3.27.787L3.95 25l5.25 2.7c2.75 1.45 6.15.95 8.35-1.25L19 25l-1.45-1.45c-1.374-1.343-3.218-2.043-5.08-2.036zm12.53.685c-.75 0-1.45.301-1.95.801s-.8 1.2-.8 1.95.3 1.45.8 1.95 1.2.8 1.95.8 1.45-.3 1.95-.8.8-1.2.8-1.95-.3-1.45-.8-1.95-1.2-.8-1.95-.8zm12 1.25c.85 0 1.5.65 1.5 1.5s-.7 1.5-1.5 1.5-1.5-.65-1.5-1.5.7-1.5 1.5-1.5zM13 23.5c.8 0 1.5.65 1.5 1.5s-.7 1.5-1.5 1.5c-.85 0-1.5-.65-1.5-1.5s.7-1.5 1.5-1.5zm8.55 4.95l-6.8 1.7c-1.1.25-1.95 1.2-2.1 2.35l-.75 5.6 5.6-.75c1.15-.15 2.05-1 2.35-2.1zm6.9 0l1.7 6.8c.25 1.1 1.2 1.95 2.35 2.1l5.6.7-.75-5.6c-.15-1.15-1-2.05-2.1-2.35zM25 31l-1.45 1.45c-2.15 2.2-2.65 5.6-1.25 8.35l2.7 5.25 2.7-5.25c1.45-2.75.95-6.15-1.25-8.35zm8.3.85c.75 0 1.4.6 1.4 1.4 0 .4-.15.75-.4 1s-.6.4-1 .4c-.75 0-1.4-.6-1.4-1.4 0-.4.15-.75.4-1s.6-.4 1-.4zm-16.55.05c.4 0 .75.15 1 .4s.4.6.4 1c0 .75-.6 1.4-1.4 1.4-.4 0-.75-.2-1-.4-.25-.25-.4-.6-.4-1 0-.75.6-1.4 1.4-1.4zM25 35.5c.85 0 1.5.7 1.5 1.5 0 .85-.65 1.5-1.5 1.5s-1.5-.7-1.5-1.5.65-1.5 1.5-1.5z'  stroke-width='1' stroke='none' fill='hsla(47,80.9%,61%,1)'/><path d='M1 0c.5.9 1.45 1.5 2.55 1.5C4.65 1.5 5.6.9 6.1 0zm42.9 0c.5.9 1.45 1.5 2.55 1.5C47.55 1.5 48.5.9 49 0zM0 1v5.1c.9-.5 1.5-1.45 1.5-2.55C1.5 2.45.9 1.5 0 1zm50 0c-.9.5-1.5 1.45-1.5 2.55 0 1.1.6 2.05 1.5 2.55zM0 43.9V49c.9-.5 1.5-1.45 1.5-2.55 0-1.1-.6-2.05-1.5-2.55zm50 0c-.9.5-1.5 1.45-1.5 2.55 0 1.1.6 2.05 1.5 2.55zM3.55 48.5c-1.1 0-2.05.6-2.55 1.5h5.1c-.5-.9-1.45-1.5-2.55-1.5zm42.9 0c-1.1 0-2.05.6-2.55 1.5H49c-.5-.9-1.45-1.5-2.55-1.5z'  stroke-width='1' stroke='none' fill='hsla(4.1,89.6%,58.4%,1)'/><path d='M11.7 0A28.002 28.002 0 00.05 11.65v1.45c1.3-2.8 3.1-5.4 5.4-7.65A27.64 27.64 0 0113.15 0H11.7zm25.2.05c2.8 1.3 5.4 3.1 7.65 5.4a27.64 27.64 0 015.45 7.7V11.7A28.002 28.002 0 0038.35.05H36.9zm-16.6.9a.55.55 0 00-.55.55.55.55 0 00.55.55.55.55 0 00.55-.55.55.55 0 00-.55-.55zm9.4 0a.55.55 0 00-.55.55.55.55 0 00.55.55.55.55 0 00.55-.55.55.55 0 00-.55-.55zM17.65 3.6a.55.55 0 00-.55.55.55.55 0 00.55.55.55.55 0 00.55-.55.55.55 0 00-.55-.55zm14.7 0a.55.55 0 00-.55.55.55.55 0 00.55.55.55.55 0 00.55-.55.55.55 0 00-.55-.55zm-17.4 2.65a.55.55 0 00-.55.55.55.55 0 00.55.55.55.55 0 00.55-.55.55.55 0 00-.55-.55zm20.1 0a.55.55 0 00-.55.55.55.55 0 00.55.55.55.55 0 00.55-.55.55.55 0 00-.55-.55zM12.3 8.9a.55.55 0 00-.55.55.55.55 0 00.55.55.55.55 0 00.55-.55.55.55 0 00-.55-.55zm25.4 0a.55.55 0 00-.55.55.55.55 0 00.55.55.55.55 0 00.55-.55.55.55 0 00-.55-.55zM9.45 11.75a.55.55 0 00-.55.55.55.55 0 00.55.55.55.55 0 00.55-.55.55.55 0 00-.55-.55zm31.1 0a.55.55 0 00-.55.55.55.55 0 00.55.55.55.55 0 00.55-.55.55.55 0 00-.55-.55zM6.8 14.4a.55.55 0 00-.55.55.55.55 0 00.55.55.55.55 0 00.55-.55.55.55 0 00-.55-.55zm36.4 0a.55.55 0 00-.55.55.55.55 0 00.55.55.55.55 0 00.55-.55.55.55 0 00-.55-.55zM4.15 17.05a.55.55 0 00-.55.55.55.55 0 00.55.55.55.55 0 00.55-.55.55.55 0 00-.55-.55zm41.7 0a.55.55 0 00-.55.55.55.55 0 00.55.55.55.55 0 00.55-.55.55.55 0 00-.55-.55zM1.5 19.75a.55.55 0 00-.55.55.55.55 0 00.55.55.55.55 0 00.55-.55.55.55 0 00-.55-.55zm47 0a.55.55 0 00-.55.55.55.55 0 00.55.55.55.55 0 00.55-.55.55.55 0 00-.55-.55zm-47 9.4a.55.55 0 00-.55.55.55.55 0 00.55.55.55.55 0 00.55-.55.55.55 0 00-.55-.55zm47 0a.55.55 0 00-.55.55.55.55 0 00.55.55.55.55 0 00.55-.55.55.55 0 00-.55-.55zM4.15 31.8a.55.55 0 00-.55.55.55.55 0 00.55.55.55.55 0 00.55-.55.55.55 0 00-.55-.55zm41.7 0a.55.55 0 00-.55.55.55.55 0 00.55.55.55.55 0 00.55-.55.55.55 0 00-.55-.55zM6.8 34.45a.55.55 0 00-.55.55.55.55 0 00.55.55.55.55 0 00.55-.55.55.55 0 00-.55-.55zm36.4 0a.55.55 0 00-.55.55.55.55 0 00.55.55.55.55 0 00.55-.55.55.55 0 00-.55-.55zM0 36.85v1.45a28.002 28.002 0 0011.65 11.65h1.45c-2.8-1.3-5.4-3.15-7.65-5.4A27.64 27.64 0 010 36.85zm49.95 0a25.563 25.563 0 01-5.4 7.7 27.64 27.64 0 01-7.7 5.45h1.45a28.002 28.002 0 0011.65-11.65v-1.5zm-40.5.3a.55.55 0 00-.55.55.55.55 0 00.55.55.55.55 0 00.55-.55.55.55 0 00-.55-.55zm31.1 0a.55.55 0 00-.55.55.55.55 0 00.55.55.55.55 0 00.55-.55.55.55 0 00-.55-.55zm-28.25 2.8a.55.55 0 00-.55.55.55.55 0 00.55.55.55.55 0 00.55-.55.55.55 0 00-.55-.55zm25.4 0a.55.55 0 00-.55.55.55.55 0 00.55.55.55.55 0 00.55-.55.55.55 0 00-.55-.55zm-22.75 2.7a.55.55 0 00-.55.55.55.55 0 00.55.55.55.55 0 00.55-.55.55.55 0 00-.55-.55zm20.1 0a.55.55 0 00-.55.55.55.55 0 00.55.55.55.55 0 00.55-.55.55.55 0 00-.55-.55zm-17.4 2.65a.55.55 0 00-.55.55.55.55 0 00.55.55.55.55 0 00.55-.55.55.55 0 00-.55-.55zm14.7 0a.55.55 0 00-.55.55.55.55 0 00.55.55.55.55 0 00.55-.55.55.55 0 00-.55-.55zM20.3 47.95a.55.55 0 00-.55.55.55.55 0 00.55.55.55.55 0 00.55-.55.55.55 0 00-.55-.55zm9.4 0a.55.55 0 00-.55.55.55.55 0 00.55.55.55.55 0 00.55-.55.55.55 0 00-.55-.55z'  stroke-width='1' stroke='none' fill='hsla(186.8,100%,41.6%,1)'/></pattern></defs><rect width='800%' height='800%' transform='translate(0,0)' fill='url(%23a)'/></svg>");
+
+    section {
+      width: 100%;
+      height: calc(100% - var(--header-height));
+      margin-top: var(--header-height);
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      overflow-y: auto;
+      gap: 2rem;
+
+      .form-notes {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 2rem;
+        gap: 1rem;
+        background-color: #9be2f8;
+        border-radius: var(--redondes);
+
+        h2 {
+          text-align: center;
+          color: var(--secondary-color);
+          font-size: 3rem;
+        }
+
+        label {
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          font-size: 2.5vh;
+          color: gray;
+          text-align: center;
+        }
+        input,
+        textarea {
+          width: 100%;
+          padding: 1vh;
+          border-radius: var(--redondes);
+          background-color: var(--secondary-color);
+          font-size: 1.5rem;
+          resize: vertical;
+
+          &:hover {
+            background-color: var(--primary-color);
+            transform: scale(1.05);
+          }
+        }
+        .btn-2 {
+          /* width: 40%; */
+          border-radius: 10px;
+          border: none;
+          padding: 10px;
+          color: var(--secondary-color);
+          background-color: var(--color-tree);
+          font-size: 2rem;
+          margin-top: 1rem;
+
+          &:hover {
+            background-color: white;
+            /* border: 1px solid #8c9096; */
+            color: #8c9096;
+          }
+        }
+      }
+
+      .cont-categorias {
+        display: grid;
+        width: 100%;
+        grid-template-columns: 2fr 1fr 2fr;
+        align-items: center;
+        margin-top: 4vh;
+        border: none;
+
+        #agruparNotas {
+          font-size: 2rem;
+          background-color: var(--secondary-color);
+          padding: 0.7rem;
+          border: 1rem;
+          text-align: center;
+        }
+
+        hr {
+          border: 0.5px solid white;
+        }
+      }
+      .notes {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        /* gap: 1rem; */
+        border-radius: var(--redondes);
+
+        .memo {
+          padding: 1vh;
+          /* width: 35vh; */
+          width: 25rem;
+          position: relative;
+
+          div {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-color: #fee659;
+            border: 1px solid #f7d2c4;
+            border-radius: var(--redondes);
+            padding: 2vh;
+            /* gap: 1rem; */
+
+            label {
+              /* background: red; */
+              width: 100%;
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+              
+              h3 {
+                font-size: 2rem;
+                color: brown;
+                overflow-wrap: anywhere;
+              }
+
+              ul {
+                position: absolute;
+                list-style: none;
+                font-size: 2rem;
+                top: 70px;
+                right: 35px;
+                color: blue;
+                background-color: var(--primary-color);
+                padding: 5px;
+                visibility: hidden;
+                cursor: pointer;
+
+                &:hover {
+                  cursor: pointer;
+                  visibility: visible;
+                }
+              }
+            }
+
+            p {
+              overflow-wrap: anywhere;
+              font-size: 1.5rem;
+              color: #8c9096;
+              /* text-align: justify; */
+            }
+
+            select {
+              font-size: 1.5rem;
+              padding: 5px;
+              border-radius: 5px;
+              font-weight: 700;
+              border: none;
+              align-self: flex-end;
+
+              &:focus {
+                outline: none;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.show-card {
+  animation: show-card 1s ease normal backwards;
+}
+
+.hide-card {
+  animation: hide-card 500ms ease normal forwards;
+}
+
+.show-note {
+  animation: show-cont-note 1s ease normal backwards;
+}
+
+.hide-note {
+  animation: hide-cont-note 1s ease 1s normal forwards;
+}
+
+.show-note > div {
+  animation: show-note 1s ease 1s normal backwards;
+}
+
+.hide-note > div {
+  animation: hide-note 1s ease normal forwards;
+}
+
+/* .memo.importante_mostrar {
+  animation: show-note 0.3s ease normal backwards;
+} */
+
+/* animacion de mostrar y ocultar el card */
+@keyframes hide-card {
+  from {
+    transform: rotateX(0deg) rotateY(0deg);
+  }
+  to {
+    transform: rotateX(90deg) rotateY(-90deg);
+  }
+}
+
+@keyframes show-card {
+  0% {
+    transform: rotateX(90deg) rotateY(90deg);
+  }
+  100% {
+    transform: rotateX(0deg) rotateY(0deg);
+  }
+}
+
+/* animacion de las notas */
+@keyframes show-note {
+  /* from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  } */
+  0% {
+    transform: scale(0);
+    /* width: 30vh; */
+  }
+  100% {
+    transform: scale(1);
+    /* width: 0vh; */
+  }
+}
+
+@keyframes hide-note {
+  0% {
+    transform: scale(1);
+    /* width: 0vh; */
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+
+@keyframes show-cont-note {
+  from {
+    width: 0;
+    padding: 0;
+  }
+  to {
+    width: 17rem;
+    padding: 1vh;
+  }
+}
+
+@keyframes hide-cont-note {
+  from {
+    width: 17rem;
+    padding: 1vh;
+  }
+  to {
+    width: 0;
+    padding: 0;
+  }
+}
+
+@media screen and (max-aspect-ratio: 4/5) {
+  header {
+    a {
+      h1 {
+        display: none;
+      }
+    }
+    nav {
+      label {
+        display: flex;
+        background-color: var(--color-tree);
+
+        input:checked {
+          display: flex;
+          background-color: var(--color-tree);
+          position: fixed;
+          left: 0;
+          top: 0;
+          width: 100vw;
+          height: 100vh;
+          opacity: 0;
+        }
+
+        .hamburguer {
+          width: 7vh;
+        }
+      }
+
+      div {
+        position: absolute;
+        background: linear-gradient(
+          to top,
+          var(--color-tree) 95%,
+          var(--secondary-color) 200%
+        );
+        top: 100%;
+        height: calc(100vh - (var(--header-height)));
+        width: 92vw;
+        right: -90vw;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 10vh;
+        opacity: 0;
+        transition: right 0.5s ease, opacity 0s ease 0.5s;
+
+        .subtitle {
+          justify-content: center;
+          align-items: center;
+          font-size: 6vh;
+        }
+
+        #imgHeader {
+          height: 50%;
+          margin: 5vh;
+        }
+
+        ul {
+          all: unset;
+          display: flex;
+          width: 100%;
+          height: 100%;
+          align-items: flex-end;
+          list-style: none;
+        }
+      }
+
+      &:has(label > input:checked) > div {
+        right: 0;
+        opacity: 1;
+        transition: right 0.5s ease, opacity 0s ease 0s;
+      }
+
+      ul {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        li {
+          width: 100%;
+          height: 10vh;
+          text-align: center;
+        }
+      }
+    }
+  }
+}

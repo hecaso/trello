@@ -1,0 +1,106 @@
+%nota {
+  .memo {
+    box-shadow: var(--shadow);
+    border-radius: var(--redondes);
+    padding: 1vh;
+    width: 25rem;
+    position: relative;
+
+    & > div {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid var(--secondary-color);
+      border-radius: var(--redondes);
+      padding: 2vh;
+      
+      label {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        h2 {
+          font-size: 2rem;
+          color: blue;
+          overflow-wrap: anywhere;
+        }
+
+       & > .eliminar {
+          position: relative;
+          // background-color: blue;
+
+          img {
+            color: black;
+            width: 20px;
+            cursor: pointer;
+          }
+          
+          ul {
+            position: absolute;
+            list-style: none;
+            font-size: 2rem;
+            top: 70px;
+            right: 35px;
+            color: blue;
+            background-color: var(--primary-color);
+            border-radius: 1px solid;
+            padding: 5px;
+            visibility: hidden;
+            top: 21px;
+            right: 8px;
+            
+            li {
+              padding: 1px;
+              font-size: 1.8rem;   
+              
+              &:hover {
+                background-color: var(--secondary-color);
+                color: var(--primary-color);
+              }
+            }
+            
+          }
+          &:hover {
+            ul {
+              visibility: visible;
+
+            }
+          }
+        }
+
+      }
+
+      p {
+        overflow-wrap: anywhere;
+        font-size: 1.5rem;
+        color: var(--secondary-color);
+        padding: 10px 0 10px 0;
+      }
+
+      select {
+        font-size: 1.5rem;
+        padding: 5px;
+        border-radius: 5px;
+        font-weight: 700;
+        border: none;
+        align-self: flex-end;
+
+        &:focus {
+          outline: none;
+        }
+      }
+    }
+  }
+
+  .oculta {
+    width: 0;
+    padding: 0;
+
+    div {
+      transform: scale(0);
+      display: none;
+    }
+  }
+}

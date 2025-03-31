@@ -1,0 +1,618 @@
+:root {
+  --header-height: 60px;
+  --primary-color: #ffffff;
+  --secondary-color: rgb(0, 110, 255);
+  --color-tree: #cddc49;
+  --shadow: 5px 5px 5px gray;
+  --redondes: 10px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+  list-style: none;
+  transition: background-color 0.3s ease;
+}
+
+html {
+  height: 100%;
+  font-size: 62.5%;
+}
+
+body {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 100%;
+  height: 100%;
+}
+
+header {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-color: var(--primary-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  height: var(--header-height);
+  left: 0;
+  right: 0;
+  top: calc(var(--header-height) * -1);
+  transition: top 0.5s ease;
+  z-index: 1;
+}
+header > * {
+  padding: 10px;
+}
+header a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+}
+header a img {
+  height: var(--header-height);
+}
+header a h1 {
+  color: var(--secondary-color);
+  font-size: 4rem;
+}
+header nav {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+}
+header nav label {
+  display: none;
+}
+header nav label input {
+  display: none;
+}
+header nav div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+header nav div .subtitle {
+  font-size: calc(var(--header-height) / 3);
+  font-weight: bold;
+  align-items: center;
+  overflow-wrap: anywhere;
+  color: var(--secondary-color);
+}
+header nav div .imgHeader {
+  background-color: var(--primary-color);
+  height: var(--header-height);
+  aspect-ratio: 1;
+  margin-right: 1rem;
+  border-radius: 50%;
+  border: 2px solid var(--secondary-color);
+  object-fit: cover;
+}
+header nav div:hover ul {
+  visibility: visible;
+}
+header nav .hide-list ul {
+  visibility: hidden;
+}
+header nav ul {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  color: var(--secondary-color);
+  position: absolute;
+  top: 100%;
+  right: 1rem;
+  /* z-index: 1; */
+  visibility: hidden;
+}
+header nav ul li {
+  font-size: 2.5rem;
+  background-color: var(--primary-color);
+  padding: 0.5rem;
+}
+header nav ul li:hover {
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+  border-radius: var(--redondes);
+}
+
+main .container section form {
+  width: 100%;
+  max-width: 50vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.2rem;
+}
+main .container section form h2 {
+  text-align: center;
+  color: var(--secondary-color);
+  font-size: 3rem;
+}
+main .container section form label {
+  width: 100%;
+  font-size: 2.5vh;
+  margin-top: 0.5rem;
+  color: var(--secondary-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+main .container section form input,
+main .container section form textarea {
+  width: 100%;
+  padding: 1vh;
+  border-radius: var(--redondes);
+  background-color: var(--primary-color);
+  font-size: 1.5rem;
+  resize: vertical;
+}
+main .container section form input:hover,
+main .container section form textarea:hover {
+  background-color: var(--secondary-color);
+  transform: scale(1.05);
+}
+main .container section form .btn-cambiar {
+  width: 50%;
+  border-radius: var(--redondes);
+  border: none;
+  padding: 1rem;
+  color: var(--primary-color);
+  background-color: var(--secondary-color);
+  font-size: 2rem;
+  cursor: pointer;
+}
+main .container section form .btn-cambiar:hover {
+  background-color: var(--secondary-color);
+  border: 0.2rem solid var(--primary-color);
+  color: var(--primary-color);
+}
+main .container section form .btn {
+  width: 100%;
+  border-radius: var(--redondes);
+  border: none;
+  padding: 1rem;
+  color: var(--primary-color);
+  background-color: var(--secondary-color);
+  font-size: 2rem;
+  cursor: pointer;
+}
+main .container section form .btn:hover {
+  background-color: var(--secondary-color);
+  border: 0.2rem solid var(--primary-color);
+  color: var(--primary-color);
+}
+main .container section form #imgChange {
+  width: 40%;
+  aspect-ratio: 1;
+  align-self: center;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: auto;
+  background-color: var(--primary-color);
+  /* background-image: url(https://st4.depositphotos.com/7402484/31013/i/450/depositphotos_310131004-stock-photo-red-parrot-scarlet-macaw-ara.jpg);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat; */
+  /* height: 120px;
+                font-size: 2rem;
+                text-align: center;
+                margin-top: 15px; */
+}
+main .container section form .btn-2 {
+  /* width: 40%; */
+  border-radius: 10px;
+  border: none;
+  padding: 10px;
+  color: var(--primary-color);
+  background-color: var(--secondary-color);
+  font-size: 2rem;
+  margin-top: 1rem;
+}
+main .container section form .btn-2:hover {
+  background-color: var(--primary-color);
+  border: 1px solid var(--secondary-color);
+  color: var(--secondary-color);
+}
+main .container section .error-p {
+  color: red;
+  font-size: 2rem;
+  text-align: center;
+}
+main .container section .error-p + a {
+  width: 100%;
+  color: var(--secondary-color);
+  font-weight: 700;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+main > .cont-notes > section .form-notes {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+  gap: 1rem;
+  border-radius: var(--redondes);
+  border: 1px solid var(--secondary-color);
+  box-shadow: var(--shadow);
+}
+main > .cont-notes > section .form-notes h2 {
+  text-align: center;
+  color: var(--secondary-color);
+  font-size: 3rem;
+}
+main > .cont-notes > section .form-notes label {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  font-size: 2.5vh;
+  color: var(--secondary-color);
+  text-align: center;
+}
+main > .cont-notes > section .form-notes input,
+main > .cont-notes > section .form-notes textarea {
+  width: 100%;
+  padding: 1vh;
+  border-radius: var(--redondes);
+  background-color: var(--primary-color);
+  font-size: 1.5rem;
+  resize: vertical;
+  background-color: rgb(207, 200, 200);
+}
+main > .cont-notes > section .form-notes input:hover,
+main > .cont-notes > section .form-notes textarea:hover {
+  background-color: var(--primary-color);
+  transform: scale(1.05);
+}
+main > .cont-notes > section .form-notes .btn-2 {
+  /* width: 40%; */
+  border-radius: 10px;
+  border: none;
+  padding: 10px;
+  color: var(--primary-color);
+  background-color: var(--secondary-color);
+  font-size: 2rem;
+  margin-top: 1rem;
+}
+main > .cont-notes > section .form-notes .btn-2:hover {
+  background-color: var(--primary-color);
+  border: 1px solid var(--secondary-color);
+  color: var(--secondary-color);
+}
+main > .cont-notes > section .cont-categorias {
+  display: grid;
+  width: 100%;
+  grid-template-columns: 2fr 1fr 2fr;
+  align-items: center;
+  margin-top: 4vh;
+  border: none;
+}
+main > .cont-notes > section .cont-categorias .agruparNotas {
+  font-size: 2rem;
+  background-color: var(--primary-color);
+  padding: 1rem;
+  border: 1rem;
+  text-align: center;
+  border: 1px solid var(--secondary-color);
+  margin: 0px 10px 0px 10px;
+  border-radius: var(--redondes);
+}
+main > .cont-notes > section .cont-categorias hr {
+  border: 0.5px solid var(--secondary-color);
+}
+
+main .notes .memo {
+  box-shadow: var(--shadow);
+  border-radius: var(--redondes);
+  padding: 1vh;
+  width: 25rem;
+  position: relative;
+}
+main .notes .memo > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--secondary-color);
+  border-radius: var(--redondes);
+  padding: 2vh;
+}
+main .notes .memo > div label {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+main .notes .memo > div label h2 {
+  font-size: 2rem;
+  color: blue;
+  overflow-wrap: anywhere;
+}
+main .notes .memo > div label > .eliminar {
+  position: relative;
+}
+main .notes .memo > div label > .eliminar img {
+  color: black;
+  width: 20px;
+  cursor: pointer;
+}
+main .notes .memo > div label > .eliminar ul {
+  position: absolute;
+  list-style: none;
+  font-size: 2rem;
+  top: 70px;
+  right: 35px;
+  color: blue;
+  background-color: var(--primary-color);
+  border-radius: 1px solid;
+  padding: 5px;
+  visibility: hidden;
+  top: 21px;
+  right: 8px;
+}
+main .notes .memo > div label > .eliminar ul li {
+  padding: 1px;
+  font-size: 1.8rem;
+}
+main .notes .memo > div label > .eliminar ul li:hover {
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+}
+main .notes .memo > div label > .eliminar:hover ul {
+  visibility: visible;
+}
+main .notes .memo > div p {
+  overflow-wrap: anywhere;
+  font-size: 1.5rem;
+  color: var(--secondary-color);
+  padding: 10px 0 10px 0;
+}
+main .notes .memo > div select {
+  font-size: 1.5rem;
+  padding: 5px;
+  border-radius: 5px;
+  font-weight: 700;
+  border: none;
+  align-self: flex-end;
+}
+main .notes .memo > div select:focus {
+  outline: none;
+}
+main .notes .oculta {
+  width: 0;
+  padding: 0;
+}
+main .notes .oculta div {
+  transform: scale(0);
+  display: none;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+main .container {
+  display: none;
+  border-radius: var(--redondes);
+  justify-content: center;
+  align-items: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  box-shadow: var(--shadow);
+}
+main .container section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding: 2rem;
+  border: 1px solid var(--secondary-color);
+  border-radius: var(--redondes);
+}
+main > .cont-notes {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+main > .cont-notes > section {
+  width: 100%;
+  height: calc(100% - var(--header-height));
+  margin-top: var(--header-height);
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-y: auto;
+  gap: 2rem;
+}
+main .notes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  /* gap: 1rem; */
+  border-radius: var(--redondes);
+  padding: 10rem;
+}
+
+.show-card {
+  animation: show-card 2s ease normal backwards;
+}
+
+.hide-card {
+  animation: hide-card 2s ease normal forwards;
+}
+
+.show-note {
+  animation: show-cont-note 1s ease normal backwards;
+}
+
+.hide-note {
+  animation: hide-cont-note 1s ease 1s normal forwards;
+}
+
+.show-note > div {
+  animation: show-note 1s ease 1s normal backwards;
+}
+
+.hide-note > div {
+  animation: hide-note 1s ease normal forwards;
+}
+
+/* .memo.importante_mostrar {
+        animation: show-note 0.3s ease normal backwards;
+      } */
+/* animacion de mostrar y ocultar el card */
+@keyframes hide-card {
+  from {
+    transform: rotateX(0deg) rotateY(0deg);
+  }
+  to {
+    transform: rotateX(90deg) rotateY(90deg);
+  }
+}
+@keyframes show-card {
+  0% {
+    transform: rotateX(90deg) rotateY(90deg);
+  }
+  100% {
+    transform: rotateX(0deg) rotateY(0deg);
+  }
+}
+/* animacion de las notas */
+@keyframes show-note {
+  /* from {
+          transform: scale(0);
+        }
+        to {
+          transform: scale(1);
+        } */
+  0% {
+    transform: scale(0);
+    /* width: 30vh; */
+  }
+  100% {
+    transform: scale(1);
+    /* width: 0vh; */
+  }
+}
+@keyframes hide-note {
+  0% {
+    transform: scale(1);
+    /* width: 0vh; */
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+@keyframes show-cont-note {
+  from {
+    width: 0;
+    padding: 0;
+  }
+  to {
+    width: 17rem;
+    padding: 1vh;
+  }
+}
+@keyframes hide-cont-note {
+  from {
+    width: 17rem;
+    padding: 1vh;
+  }
+  to {
+    width: 0;
+    padding: 0;
+    display: none;
+  }
+}
+@media screen and (max-aspect-ratio: 4/5) {
+  header a h1 {
+    display: none;
+  }
+  header nav label {
+    display: flex;
+    background-color: var(--secondary-color);
+  }
+  header nav label input:checked {
+    display: flex;
+    background-color: var(--primary-color);
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    opacity: 0;
+  }
+  header nav label .hamburguer {
+    width: 7vh;
+  }
+  header nav div {
+    position: absolute;
+    background: linear-gradient(to top, var(--primary-color) 95%, var(--secondary-color) 200%);
+    top: 100%;
+    height: calc(100vh - (var(--header-height)));
+    width: 92vw;
+    right: -90vw;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 10vh;
+    opacity: 0;
+    transition: right 0.5s ease, opacity 0s ease 0.5s;
+  }
+  header nav div .subtitle {
+    justify-content: center;
+    align-items: center;
+    font-size: 6vh;
+  }
+  header nav div #imgHeader {
+    height: 50%;
+    margin: 5vh;
+  }
+  header nav div ul {
+    all: unset;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    align-items: flex-end;
+    list-style: none;
+  }
+  header nav:has(label > input:checked) > div {
+    right: 0;
+    opacity: 1;
+    transition: right 0.5s ease, opacity 0s ease 0s;
+  }
+  header nav ul {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  header nav ul li {
+    width: 100%;
+    height: 10vh;
+    text-align: center;
+    color: var(--secondary-color);
+  }
+}
+
+/*# sourceMappingURL=style.css.map */

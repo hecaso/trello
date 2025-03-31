@@ -1,0 +1,99 @@
+.show-card {
+  animation: show-card 2s ease normal backwards;
+}
+
+.hide-card {
+  animation: hide-card 2s ease normal forwards;
+}
+
+.show-note {
+  animation: show-cont-note 1s ease normal backwards;
+}
+
+.hide-note {
+  animation: hide-cont-note 1s ease 1s normal forwards;
+}
+
+.show-note > div {
+  animation: show-note 1s ease 1s normal backwards;
+}
+
+.hide-note > div {
+  animation: hide-note 1s ease normal forwards;
+}
+
+
+
+/* .memo.importante_mostrar {
+        animation: show-note 0.3s ease normal backwards;
+      } */
+
+/* animacion de mostrar y ocultar el card */
+@keyframes hide-card {
+  from {
+    transform: rotateX(0deg) rotateY(0deg);
+  }
+  to {
+    transform: rotateX(90deg) rotateY(90deg);
+  }
+}
+
+@keyframes show-card {
+  0% {
+    transform: rotateX(90deg) rotateY(90deg);
+  }
+  100% {
+    transform: rotateX(0deg) rotateY(0deg);
+  }
+}
+
+/* animacion de las notas */
+@keyframes show-note {
+  /* from {
+          transform: scale(0);
+        }
+        to {
+          transform: scale(1);
+        } */
+  0% {
+    transform: scale(0);
+    /* width: 30vh; */
+  }
+  100% {
+    transform: scale(1);
+    /* width: 0vh; */
+  }
+}
+
+@keyframes hide-note {
+  0% {
+    transform: scale(1);
+    /* width: 0vh; */
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+
+@keyframes show-cont-note {
+  from {
+    width: 0;
+    padding: 0;
+  }
+  to {
+    width: 17rem;
+    padding: 1vh;
+  }
+}
+
+@keyframes hide-cont-note {
+  from {
+    width: 17rem;
+    padding: 1vh;
+  }
+  to {
+    width: 0;
+    padding: 0;
+    display: none;
+  }
+}

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <header>
+        <a href="#">
+            <!-- <div id="imgLogo"></div> -->
+            <img id="imgLogo" src="./svg/tello-01.png" alt="">
+            <h1>Trello</h1>
+        </a>
+        <nav>
+            <label>
+                <img src="./svg/hamburguer.svg" class="hamburguer" alt="">
+                <input type="checkbox">
+            </label>
+
+            <div>
+                <!-- <div id="imgHeader" class="imgHeader"></div> -->
+                <h2 class="subtitle">Nombre de la persona</h2>
+                <img id="imgHeader" class="imgHeader" src="./svg/user.svg" alt="foto del perfil">
+                <ul>
+                    <li id="config">Configuración</li>
+                    <li id="exit">Salir</li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <div id="container" class="container show-card">
+            <!-- Sección de login -->
+            <section id="iniciarSeccion">
+                <form id="initSection">
+                    <h2 class="subtitle">Iniciar Sesión</h2>
+                    <label for="email-login">Correo</label>
+                    <input type="email" id="email-login" name="email" placeholder="Correo electrónico" required>
+                    <label for="password-login">Contraseña</label>
+                    <input type="password" id="password-login" name="password" placeholder="Contraseña" required>
+                    <button type="submit" class="btn">Iniciar Sesion</button>
+                </form>
+                <p class="error-p"></p>
+                <a href="#" id="none_init">No tengo cuenta</a>
+            </section>
+            <!-- Sección de registro -->
+            <section id="registrarse">
+                <form id="register">
+                    <h2 class="subtitle">Registrarse</h2>
+                    <label for="nombre">Nombre</label>
+                    <input type="text" id="nombre" name="nombre" placeholder="Escribe tu nombre" required>
+                    <label for="apellido">Apellido</label>
+                    <input type="text" id="apellido" name="apellido" placeholder="Escribe tu apellido" required>
+                    <label for="email-register">Correo</label>
+                    <input type="email" id="email-register" name="email-register" placeholder="Correo electrónico"
+                        required>
+                    <label for="edad">Edad</label>
+                    <input type="text" id="edad" name="edad" placeholder="edad" required>
+                    <label for="password-register">Contraseña</label>
+                    <input type="password" id="password-register" name="password" placeholder="Contraseña" required>
+                    <label for="password-confiRegister">Confirmar contraseña</label>
+                    <input type="password" id="password-confRegister" name="passwordConf"
+                        placeholder="confirma tu contraseña" required>
+                    <button type="submit" class="btn">Registrarse</button>
+                </form>
+                <p class="error-p"></p>
+                <a href="#" id="none_reg">Ya tengo cuenta</a>
+            </section>
+            <!-- seccion de perfil -->
+            <section id="perfil">
+                <form class="perfil initForm">
+                    <h2 class="subtitle">Foto de Perfil</h2>
+                    <!-- <div id="imgChange"></div> -->
+                    <img id="imgChange" src="./svg/user.svg" alt="">
+                    <br>
+                    <button type="button" id="btn-cambiar" class="btn-cambiar">Cambiar Foto</button>
+                    <div class="botones">
+                        <button type="button" id="btn-cancelar" class="btn-2">Cancelar</button>
+                        <button type="button" id="btn-guardar" class="btn-2">Guardar</button>
+                    </div>
+                </form>
+            </section>
+        </div>
+        <!-- contenedor de las notas -->
+        <div id="cont-notes" class="cont-notes">
+            <!-- sección de notas -->
+            <section>
+                <!-- formulario para hacer una nota -->
+                <form id="form-notes" class="form-notes">
+                    <h2>Hacer una anotación</h2>
+                    <label for="note-title-input">
+                        <span>Titulo de la nota</span>
+                        <input type="text" id="note-title-input" required placeholder="Colocale un titulo a la nota">
+                    </label>
+
+                    <label for="note-desc-input">
+                        <span>Descripción de la nota</span>
+                        <textarea id="note-desc-input" required placeholder="Haz una descripción de la nota"></textarea>
+                    </label>
+
+                    <button type="submit" class="btn-2">Agregar Nota</button>
+                </form>
+
+                <div class="cont-categorias">
+                    <hr>
+                    <select id="agruparNotas" class="agruparNotas">
+                        <option style="color: black;" value="0">Todas</option>
+                        <option style="color: orange;" value="1">Pendiente</option>
+                        <option style="color: green;" value="2">Completada</option>
+                        <option selected style="color: red;" value="3">No Completada</option>
+                    </select>
+                    <hr>
+                </div>
+
+                <!-- notas -->
+                <div id="notes" class="notes ">
+                    <!-- <div class="memo show-note">
+                        <div>
+                            <label>
+                                <h2>Titulo</h2>
+                                <div class="elimininar">
+                                    <img src="./img/three-dots-vertical.svg" alt="">
+                                    <ul>
+                                        <li>Corregir</li>
+                                        <li>Eliminar</li>
+                                    </ul>
+                                </div>
+                            </label>
+                            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Exercitationem modi
+                                perspiciatis sequi quaerat, aperiam recusandae.</p>
+                                    
+                            <select style="color: orange;" onchange="this.style.color = this.querySelector(`option:nth-child(`+this.value+`)`).style.color;">
+                            <option style="color: orange;" value="1">Pendientes</option>
+                            <option style="color: green;" value="2">Completadas</option>
+                            <option style="color: red;" value="3">No completadas</option>
+                        </select>
+                        </div>
+                    </div> -->
+
+
+
+                </div>
+            </section>
+        </div>
+
+    </main>
+    <script type="module" src="./js/index.js" defer></script>
+</body>
+
+</html>

@@ -1,0 +1,83 @@
+%formularioNota {
+  .form-notes {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+    gap: 1rem;
+    border-radius: var(--redondes);
+    border: 1px solid var(--secondary-color);
+    box-shadow: var(--shadow);
+
+    h2 {
+      text-align: center;
+      color: var(--secondary-color);
+      font-size: 3rem;
+    }
+
+    label {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      font-size: 2.5vh;
+      color: var(--secondary-color);
+      text-align: center;
+    }
+    input,
+    textarea {
+      width: 100%;
+      padding: 1vh;
+      border-radius: var(--redondes);
+      background-color: var(--primary-color);
+      font-size: 1.5rem;
+      resize: vertical;
+      background-color: rgb(207, 200, 200);
+
+      &:hover {
+        background-color: var(--primary-color);
+        transform: scale(1.05);
+      }
+    }
+    
+    .btn-2 {
+      /* width: 40%; */
+      border-radius: 10px;
+      border: none;
+      padding: 10px;
+      color: var(--primary-color);
+      background-color: var(--secondary-color);
+      font-size: 2rem;
+      margin-top: 1rem;
+
+      &:hover {
+        background-color: var(--primary-color);
+        border: 1px solid var(--secondary-color);
+        color: var(--secondary-color);
+      }
+    } 
+  }
+
+        .cont-categorias {
+        display: grid;
+        width: 100%;
+        grid-template-columns: 2fr 1fr 2fr;
+        align-items: center;
+        margin-top: 4vh;
+        border: none;
+
+        .agruparNotas {
+          font-size: 2rem;
+          background-color: var(--primary-color);
+          padding: 1rem;
+          border: 1rem;
+          text-align: center;
+          border: 1px solid var(--secondary-color);
+          margin: 0px 10px 0px 10px;
+          border-radius: var(--redondes);
+        }
+
+        hr {
+          border: 0.5px solid var(--secondary-color);
+        }
+      }
+}

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <a href="">
+                <!-- <div id="imgLogo"></div> -->
+                <img id="imgLogo" src="./svg/tello-01.png" alt="">
+                <h1>Trello</h1>
+            </a>
+        </div>
+
+
+        <nav>
+            <div id="imgHeader"></div>
+            <!-- <img id="imgHeader"src="./svg/user.svg" alt=""> -->
+            <ul>
+                <li id="config">Configuración</li>
+                <li id="exit">Salir</li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div id="container" class="container show-card">
+
+            <section id="iniciarSeccion">
+                <form id="initSection">
+                    <h2 class="subtitle">Iniciar Sesión</h2>
+                    <label for="email-login">Correo</label>
+                    <input type="email" id="email-login" name="email" placeholder="Correo electrónico" required>
+                    <label for="password-login">Contraseña</label>
+                    <input type="password" id="password-login" name="password" placeholder="Contraseña" required>
+                    <button type="submit" class="btn">Iniciar sesion</button>
+                    <br>
+                </form>
+                <p class="error-p"></p>
+                <a href="#" id="none_init">No tengo cuenta</a>
+                <br>
+            </section>
+
+            <section id="registrarse">
+                <form id="register">
+                    <h2 class="subtitle">Registrarse</h2>
+                    <label for="nombre">Nombre</label>
+                    <input type="text" id="nombre" name="nombre" placeholder="Escribe tu nombre" required>
+                    <label for="apellido">Apellido</label>
+                    <input type="text" id="apellido" name="apellido" placeholder="Escribe tu apellido" required>
+                    <label for="email-register">Correo</label>
+                    <input type="email" id="email-register" name="email-register" placeholder="Correo electrónico"
+                        required>
+                    <label for="edad">Edad</label>
+                    <input type="text" id="edad" name="edad" placeholder="edad" required>
+                    <label for="password-register">Contraseña</label>
+                    <input type="password" id="password-register" name="password" placeholder="Contraseña" required>
+                    <label for="password-confiRegister">Confirmar contraseña</label>
+                    <input type="password" id="password-confRegister" name="passwordConf"
+                        placeholder="confirma tu contraseña" required>
+                    <br>
+                    <button type="submit" class="btn">Registrarse</button>
+                </form>
+
+                <p class="error-p"></p>
+                <a href="#" id="none_reg">Ya tengo cuenta</a>
+
+            </section>
+
+            <section id="perfil">
+                <form class="perfil initForm">
+                    <h2 class="subtitle">Foto de Perfil</h2>
+                    <div id="imgChange"></div>
+                    <!-- <img id="imgChange" src="./svg/user.svg" alt=""> -->
+                    <br>
+                    <button type="button" id="btn-cambiar" class="btn">Cambiar Foto</button>
+                    <div class="botones">
+                        <button type="button" id="btn-cancelar" class="btn-2">Cancelar</button>
+                        <button type="button" id="btn-guardar" class="btn-2">Guardar</button>
+                    </div>
+                </form>
+            </section>
+
+        </div>
+        
+        <section id="cont-notes" class="cont-notes">
+            <form id="form-notes" class="form-notes">
+                <h2>Hacer una anotación</h2>
+                <label for="note-title-input">
+                    <span>Titulo de la nota</span>
+                    <input type="text" id="note-title-input" required>
+                </label>
+
+                <label for="note-desc-input">
+                    <span>Titulo de la nota</span>
+                    <textarea id="note-desc-input" required></textarea>
+                </label>
+
+                <button type="submit" id="btn-2" class="btn-2">Agregar Nota</button>
+            </form>
+
+
+            <div id="notes" class="notes">
+                <div class="memo">
+                    <strong>Titulo.</strong>
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Exercitationem modi perspiciatis sequi quaerat, aperiam recusandae.</p>
+                    <!-- <p class="state">Estado</p> -->
+                    <select style="color: orange;" onchange="this.style.color = this.querySelector(`option:nth-child(`+this.value+`)`).style.color;">
+                       <option style="color: orange;" value="1">Pendientes</option>
+                       <option style="color: green;" value="2">Completadas</option>
+                       <option style="color: red;" value="3">Incompleto</option>
+                    </select>
+                </div>
+
+
+
+            </div>
+        </section>
+
+
+
+
+    </main>
+
+    <script type="module" src="./js/index.js" defer></script>
+</body>
+
+</html>
