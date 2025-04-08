@@ -1,25 +1,25 @@
 .show-card {
-  animation: show-card 2s ease normal backwards;
+  animation: show-card 1s ease normal backwards;
 }
 
 .hide-card {
-  animation: hide-card 2s ease normal forwards;
+  animation: hide-card 1s ease normal forwards;
 }
 
 .show-note {
-  animation: show-cont-note 1s ease normal backwards;
+  animation: show-cont-note .5s ease normal backwards;
 }
 
 .hide-note {
-  animation: hide-cont-note 1s ease 1s normal forwards;
+  animation: hide-cont-note .5s ease 1s normal forwards;
 }
 
 .show-note > div {
-  animation: show-note 1s ease 1s normal backwards;
+  animation: show-note .5s ease 1s normal backwards;
 }
 
 .hide-note > div {
-  animation: hide-note 1s ease normal forwards;
+  animation: hide-note .5s ease normal forwards;
 }
 
 

@@ -77,10 +77,14 @@
                     <!-- <div id="imgChange"></div> -->
                     <img id="imgChange" src="./svg/user.svg" alt="">
                     <br>
-                    <button type="button" id="btn-cambiar" class="btn-cambiar">Cambiar Foto</button>
                     <div class="botones">
-                        <button type="button" id="btn-cancelar" class="btn-2">Cancelar</button>
-                        <button type="button" id="btn-guardar" class="btn-2">Guardar</button>
+                        <div class="cambiar">
+                            <button type="button" id="btn-cambiar" class="btn-cambiar">Mofificar Datos</button>
+                        </div>
+                        <div class="otros_cambiar">
+                            <button type="button" id="btn-cancelar" class="btn-2">Cancelar</button>
+                            <button type="button" id="btn-guardar" class="btn-2">Guardar</button>
+                        </div>
                     </div>
                 </form>
             </section>
@@ -146,6 +150,34 @@
                 </div>
             </section>
         </div>
+
+        <div class="modal-datos">
+            <div class="cont-modal">
+                <form id="register">
+                    <h2 class="subtitle">Modificar Datos</h2>
+                    <label for="nombre">Nombre</label>
+                    <input type="text" id="nombre" name="nombre" placeholder="Escribe tu nombre" required>
+                    <label for="apellido">Apellido</label>
+                    <input type="text" id="apellido" name="apellido" placeholder="Escribe tu apellido" required>
+                    <label for="email-register">Correo</label>
+                    <input type="email" id="email-register" name="email-register" placeholder="Correo electrónico"
+                        required>
+                    <label for="edad">Edad</label>
+                    <input type="text" id="edad" name="edad" placeholder="edad" required>
+                    <label for="password-anterior">Contraseña anterior</label>
+                    <input type="password" id="password-anterior" name="password" placeholder="Contraseña" required>
+                    <label for="password-register">Contraseña</label>
+                    <input type="password" id="password-register" name="password" placeholder="Contraseña" required>
+                    <label for="password-confiRegister">Confirmar contraseña</label>
+                    <input type="password" id="password-confRegister" name="passwordConf"
+                        placeholder="confirma tu contraseña" required>
+                    <button type="submit" class="btn">Cancelar</button>
+                    <button type="submit" class="btn">Modificar</button>
+                </form>
+                <p class="error-p">EEEE</p>
+            </div>
+        </div>
+        <!-- <div class="modal modal-notas"></div> -->
 
     </main>
     <script type="module" src="./js/index.js" defer></script>

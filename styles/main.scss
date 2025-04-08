@@ -63,14 +63,37 @@ main {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    /* gap: 1rem; */
     border-radius: var(--redondes);
-    // background-color: red;
     padding: 10rem;
 
     @extend %nota;
+  }
 
-     
+  .modal-datos, .modal-notas {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.2);
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 1;
+  }
+
+  .cont-modal {
+    display: flex;
+    flex-direction: column;
+    max-width: 50vh;
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 10px 15px 10px rgba(0, 0, 0, 0.2);
+    z-index: 2;
+    
+    @extend %formulario;
+
   }
 
 }

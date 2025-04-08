@@ -28,13 +28,14 @@
       width: 100%;
       padding: 1vh;
       border-radius: var(--redondes);
-      background-color: var(--primary-color);
+      background-color: rgb(230, 227, 227);
       font-size: 1.5rem;
       resize: vertical;
-      background-color: rgb(207, 200, 200);
+      border: none;
 
       &:hover {
-        background-color: var(--primary-color);
+        border: none;
+        background-color: var(--secondary-color);
         transform: scale(1.05);
       }
     }
@@ -63,7 +64,7 @@
         grid-template-columns: 2fr 1fr 2fr;
         align-items: center;
         margin-top: 4vh;
-        border: none;
+        border-color: red;
 
         .agruparNotas {
           font-size: 2rem;

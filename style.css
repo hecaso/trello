@@ -126,7 +126,7 @@ header nav ul li:hover {
   border-radius: var(--redondes);
 }
 
-main .container section form {
+main .container section form, main .cont-modal form {
   width: 100%;
   max-width: 50vw;
   display: flex;
@@ -135,12 +135,13 @@ main .container section form {
   align-items: center;
   gap: 0.2rem;
 }
-main .container section form h2 {
+main .container section form h2, main .cont-modal form h2 {
+  font-size: 2rem;
   text-align: center;
   color: var(--secondary-color);
   font-size: 3rem;
 }
-main .container section form label {
+main .container section form label, main .cont-modal form label {
   width: 100%;
   font-size: 2.5vh;
   margin-top: 0.5rem;
@@ -149,36 +150,58 @@ main .container section form label {
   flex-direction: column;
   align-items: center;
 }
-main .container section form input,
-main .container section form textarea {
+main .container section form input, main .cont-modal form input,
+main .container section form textarea,
+main .cont-modal form textarea {
   width: 100%;
   padding: 1vh;
   border-radius: var(--redondes);
-  background-color: var(--primary-color);
+  background-color: rgb(230, 227, 227);
+  border: none;
   font-size: 1.5rem;
   resize: vertical;
 }
-main .container section form input:hover,
-main .container section form textarea:hover {
+main .container section form input:hover, main .cont-modal form input:hover,
+main .container section form textarea:hover,
+main .cont-modal form textarea:hover {
+  border: none;
   background-color: var(--secondary-color);
   transform: scale(1.05);
 }
-main .container section form .btn-cambiar {
-  width: 50%;
+main .container section form .botones, main .cont-modal form .botones {
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+main .container section form .botones .cambiar, main .cont-modal form .botones .cambiar {
+  width: 50vw;
+  display: flex;
+}
+main .container section form .botones .cambiar .btn-cambiar, main .cont-modal form .botones .cambiar .btn-cambiar {
+  font-size: 2vw;
+  width: 100%;
   border-radius: var(--redondes);
   border: none;
   padding: 1rem;
   color: var(--primary-color);
   background-color: var(--secondary-color);
-  font-size: 2rem;
   cursor: pointer;
 }
-main .container section form .btn-cambiar:hover {
-  background-color: var(--secondary-color);
-  border: 0.2rem solid var(--primary-color);
-  color: var(--primary-color);
+main .container section form .botones .cambiar .btn-cambiar:hover, main .cont-modal form .botones .cambiar .btn-cambiar:hover {
+  background-color: var(--primary-color);
+  border: 0.2rem solid var(--secondary-color);
+  color: var(--secondary-color);
 }
-main .container section form .btn {
+main .container section form .botones .otros_cambiar, main .cont-modal form .botones .otros_cambiar {
+  width: 50vw;
+  display: flex;
+  gap: 20px;
+}
+main .container section form .btn, main .cont-modal form .btn {
   width: 100%;
   border-radius: var(--redondes);
   border: none;
@@ -186,14 +209,15 @@ main .container section form .btn {
   color: var(--primary-color);
   background-color: var(--secondary-color);
   font-size: 2rem;
+  margin-top: 15px;
   cursor: pointer;
 }
-main .container section form .btn:hover {
+main .container section form .btn:hover, main .cont-modal form .btn:hover {
   background-color: var(--secondary-color);
   border: 0.2rem solid var(--primary-color);
   color: var(--primary-color);
 }
-main .container section form #imgChange {
+main .container section form #imgChange, main .cont-modal form #imgChange {
   width: 40%;
   aspect-ratio: 1;
   align-self: center;
@@ -201,36 +225,28 @@ main .container section form #imgChange {
   object-fit: cover;
   margin: auto;
   background-color: var(--primary-color);
-  /* background-image: url(https://st4.depositphotos.com/7402484/31013/i/450/depositphotos_310131004-stock-photo-red-parrot-scarlet-macaw-ara.jpg);
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat; */
-  /* height: 120px;
-                font-size: 2rem;
-                text-align: center;
-                margin-top: 15px; */
 }
-main .container section form .btn-2 {
-  /* width: 40%; */
+main .container section form .btn-2, main .cont-modal form .btn-2 {
+  width: 100%;
   border-radius: 10px;
   border: none;
   padding: 10px;
   color: var(--primary-color);
   background-color: var(--secondary-color);
-  font-size: 2rem;
+  font-size: 2vw;
   margin-top: 1rem;
 }
-main .container section form .btn-2:hover {
+main .container section form .btn-2:hover, main .cont-modal form .btn-2:hover {
   background-color: var(--primary-color);
   border: 1px solid var(--secondary-color);
   color: var(--secondary-color);
 }
-main .container section .error-p {
+main .container section .error-p, main .cont-modal .error-p {
   color: red;
   font-size: 2rem;
   text-align: center;
 }
-main .container section .error-p + a {
+main .container section .error-p + a, main .cont-modal .error-p + a {
   width: 100%;
   color: var(--secondary-color);
   font-weight: 700;
@@ -266,14 +282,15 @@ main > .cont-notes > section .form-notes textarea {
   width: 100%;
   padding: 1vh;
   border-radius: var(--redondes);
-  background-color: var(--primary-color);
+  background-color: rgb(230, 227, 227);
   font-size: 1.5rem;
   resize: vertical;
-  background-color: rgb(207, 200, 200);
+  border: none;
 }
 main > .cont-notes > section .form-notes input:hover,
 main > .cont-notes > section .form-notes textarea:hover {
-  background-color: var(--primary-color);
+  border: none;
+  background-color: var(--secondary-color);
   transform: scale(1.05);
 }
 main > .cont-notes > section .form-notes .btn-2 {
@@ -297,7 +314,7 @@ main > .cont-notes > section .cont-categorias {
   grid-template-columns: 2fr 1fr 2fr;
   align-items: center;
   margin-top: 4vh;
-  border: none;
+  border-color: red;
 }
 main > .cont-notes > section .cont-categorias .agruparNotas {
   font-size: 2rem;
@@ -314,7 +331,6 @@ main > .cont-notes > section .cont-categorias hr {
 }
 
 main .notes .memo {
-  box-shadow: var(--shadow);
   border-radius: var(--redondes);
   padding: 1vh;
   width: 25rem;
@@ -386,6 +402,7 @@ main .notes .memo > div select {
   font-weight: 700;
   border: none;
   align-self: flex-end;
+  border-color: 1px solid var(--secondary-color);
 }
 main .notes .memo > div select:focus {
   outline: none;
@@ -449,33 +466,54 @@ main .notes {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  /* gap: 1rem; */
   border-radius: var(--redondes);
   padding: 10rem;
 }
+main .modal-datos, main .modal-notas {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.2);
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 1;
+}
+main .cont-modal {
+  display: flex;
+  flex-direction: column;
+  max-width: 50vh;
+  background-color: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 10px 15px 10px rgba(0, 0, 0, 0.2);
+  z-index: 2;
+}
 
 .show-card {
-  animation: show-card 2s ease normal backwards;
+  animation: show-card 1s ease normal backwards;
 }
 
 .hide-card {
-  animation: hide-card 2s ease normal forwards;
+  animation: hide-card 1s ease normal forwards;
 }
 
 .show-note {
-  animation: show-cont-note 1s ease normal backwards;
+  animation: show-cont-note 0.5s ease normal backwards;
 }
 
 .hide-note {
-  animation: hide-cont-note 1s ease 1s normal forwards;
+  animation: hide-cont-note 0.5s ease 1s normal forwards;
 }
 
 .show-note > div {
-  animation: show-note 1s ease 1s normal backwards;
+  animation: show-note 0.5s ease 1s normal backwards;
 }
 
 .hide-note > div {
-  animation: hide-note 1s ease normal forwards;
+  animation: hide-note 0.5s ease normal forwards;
 }
 
 /* .memo.importante_mostrar {

@@ -41,7 +41,7 @@ export function crearNotas(event) {
 
     localStorage.setItem("Notas", JSON.stringify(baseNotas));
 
-    alert("¡La Nota fué agregada con éxito");
+    alert("La Nota fué agregada con éxito");
 
     controlador_vista.actualizar_vista(3);
 
@@ -113,8 +113,8 @@ function crearHTMLNota(...notas) {
                     <div class="eliminar">
                         <img src="./img/three-dots-vertical.svg" alt="">
                         <ul>
-                            <li>Corregir</li>
-                            <li>Eliminar</li>
+                            <li class="btn-modificar-nota" >Modificar</li>
+                            <li class="btn-borrar-nota">Borrar</li>
                         </ul>
                     </div>
                 </label>
@@ -228,25 +228,76 @@ export function filtrarNotas(event) {
     }
 }
 
+export function cambiarNota(event) {
+    const etiqueta = event.target;
+
+    if(etiqueta.tagName != "LI") return;
+
+    // obtengo la nota
+    const nota = etiqueta.closest(".memo");
+
+    // obtengo el id de la nota
+    const idNota = nota.id.replace("nota", "");
+
+    const baseNotasExiste = localStorage.getItem("Notas");
+    let baseNotas = [];
+
+    if(!baseNotasExiste) {
+        alert("Error, la base de datos de notas no existe");
+    }
+
+    baseNotas = baseNotas.concat(JSON.parse(baseNotasExiste));
+
+    const indiceNotaExiste = baseNotas.findIndex(n => n.id == idNota);
+    if(indiceNotaExiste == -1) {
+        alert("Error, la nota no existe");
+        return;
+    }
+
+
+    if(etiqueta.className == "btn-modificar-nota") {
+        modificarNota();
+    }
+
+    if(etiqueta.className == "btn-borrar-nota") {
+        borrarNota(nota, idNota, indiceNotaExiste, baseNotas);
+    }
+} 
+
+
+function modificarNota() {
+    console.log("estoy modificando")
+}
+function borrarNota(elementoNota, idNota, posicionNota, baseNotas){
+    baseNotas.splice(posicionNota,1);
+    localStorage.setItem("Notas", JSON.stringify(baseNotas));
+
+    animarNotaEspecifica(elementoNota,false);
+    setTimeout(() => {
+       document.getElementById(`nota${idNota}`).remove(); 
+    }, 600);
+} 
+
 function animarNotaEspecifica(cual, quiero_mostrar) {
     // si quiero mostrar, ejecuto esto
     if (quiero_mostrar) {
         // si ya tiene la clase no animar
-        if (cual.className == "memo mostradas") return;
+        if (cual.className == "memo show-note") return;
         // le coloco la animiacion
-        cual.className = "memo mostrar-nota";
+        cual.className = "memo show-note";
         // si ya se animo, le quito la clase
         setTimeout(() => {
-            cual.className = "memo mostradas";
+            cual.className = "memo show-note";
         }, 2000);
     } else {
         // si ya tiene la calse no animar
-        if (cual.className == "memo oculta") return;
+        if (cual.className == "memo hide-note") return;
         // le coloco la clase de animación
-        cual.className = "memo oculta-nota";
+        cual.className = "memo hide-note";
         // si ya se animo lq quito la clase
         setTimeout(() => {
-            cual.className = "memo oculta";
+            cual.className = "memo hide-note";
         }, 2000);
     }
 }
+

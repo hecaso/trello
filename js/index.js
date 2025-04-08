@@ -5,7 +5,8 @@ import controlador_vista from "../utils/controlador.js";
 import {registrarUsuario, ingresarUsuario} from "../utils/sistema_usuarios.js";
 import {cambiarFoto, cancelarCambioFoto, guardarCambioFoto} from "../utils/sistema_fotos.js";
 import * as irA from  "../utils/sistema_vistas_simples.js";
-import { cambiarEstadoNota, crearNotas, filtrarNotas } from "../clases/sistema_notas.js";
+import { cambiarEstadoNota, cambiarNota, crearNotas, filtrarNotas } from "../clases/sistema_notas.js";
+
 
 // import { filtrarNotas } from "../clases/sistema_notas.js";
 
@@ -39,7 +40,7 @@ window.addEventListener("resize",() => {
 // // con esta linea llamamos todas las anteriores ya que el objeto fue desestructurizado en el archivo controlador
 // controlador_vista.asignarElemento(elementos);
 
-controlador_vista.actualizar_vista(0);
+controlador_vista.actualizar_vista(2);
 
 
 elementos.pEnlaceLogin.addEventListener("click",irA.regis);
@@ -79,7 +80,7 @@ elementos.headerLiConfig.addEventListener("click", irA.configuracion )
 
 elementos.headerLiExit.addEventListener("click", irA.salir )
 
-elementos.btnCambiar.addEventListener("click", cambiarFoto);
+elementos.btnCambiarDatos.addEventListener("click", cambiarDatos);
 
 // elementos.btnGuardar.addEventListener("click",
 //     () => {
@@ -99,4 +100,5 @@ elementos.btnGuardar.addEventListener("click", guardarCambioFoto);
 elementos.formNotas.addEventListener("submit", crearNotas);
 elementos.categoriaNotas.addEventListener("change",filtrarNotas);
 
-elementos.groupNotes.addEventListener("change",cambiarEstadoNota);
+elementos.groupNotes.addEventListener("change", cambiarEstadoNota);
+elementos.groupNotes.addEventListener("click", cambiarNota);
