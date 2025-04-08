@@ -40,7 +40,7 @@ window.addEventListener("resize",() => {
 // // con esta linea llamamos todas las anteriores ya que el objeto fue desestructurizado en el archivo controlador
 // controlador_vista.asignarElemento(elementos);
 
-controlador_vista.actualizar_vista(2);
+controlador_vista.actualizar_vista(0);
 
 
 elementos.pEnlaceLogin.addEventListener("click",irA.regis);
