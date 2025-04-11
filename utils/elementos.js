@@ -38,7 +38,7 @@ const elementos = {
     nombrePerfilHeader: document.querySelector("nav .subtitle"),
     nombrePerfil: document.querySelector("#perfil .subtitle"),
     imagenPerfil: document.getElementById("imgChange"),
-    btnCambiar: document.getElementById("btn-cambiar"),
+    btnCambiarDatos: document.getElementById("btn-cambiar"),
     btnGuardar: document.getElementById("btn-guardar"),
     btnCancelar: document.getElementById("btn-cancelar"),
 

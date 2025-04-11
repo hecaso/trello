@@ -3,7 +3,7 @@ import elementos from "../utils/elementos.js";
 import controlador_vista from "../utils/controlador.js";
 // import sistema_usuario from "../utils/sistema_usuarios.js";
 import {registrarUsuario, ingresarUsuario} from "../utils/sistema_usuarios.js";
-import {cambiarFoto, cancelarCambioFoto, guardarCambioFoto} from "../utils/sistema_fotos.js";
+import {cambiarDatos, cancelarCambioFoto, guardarCambioFoto} from "../utils/sistema_fotos.js";
 import * as irA from  "../utils/sistema_vistas_simples.js";
 import { cambiarEstadoNota, cambiarNota, crearNotas, filtrarNotas } from "../clases/sistema_notas.js";
 

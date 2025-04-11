@@ -53,7 +53,7 @@ export function guardarCambioFoto() {
       }, 500);
 }
 
-export function cambiarFoto() {
+export function cambiarDatos() {
     let nuevaFoto = prompt("Ingresa el enlace de la nueva foto");
     if (nuevaFoto == null) {
         return;
