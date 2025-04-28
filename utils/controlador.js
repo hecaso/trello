@@ -35,7 +35,7 @@ const controlador_vista = {
         elementos.divNote.style.display = cual_vista == 3 ? "flex" : "none";
   
         this.animar("show-card");
-      }, 500);
+      }, 1000);
     },
   
     animar(mostrar_ocultar, mostrar_ocultar_nota) {

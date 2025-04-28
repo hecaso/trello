@@ -151,33 +151,59 @@
             </section>
         </div>
 
-        <!-- <div class="modal-datos">
+        <div class="modal-datos modal-hidden">
             <div class="cont-modal">
-                <form id="register">
+                <form id="diferente">
                     <h2 class="subtitle">Modificar Datos</h2>
                     <label for="nombre">Nombre</label>
-                    <input type="text" id="nombre" name="nombre" placeholder="Escribe tu nombre" required>
+                    <input type="text" id="nombreModificar" name="nombre" placeholder="Escribe tu nombre" required>
                     <label for="apellido">Apellido</label>
-                    <input type="text" id="apellido" name="apellido" placeholder="Escribe tu apellido" required>
-                    <label for="email-register">Correo</label>
-                    <input type="email" id="email-register" name="email-register" placeholder="Correo electrónico"
+                    <input type="text" id="apellidoModificar" name="apellido" placeholder="Escribe tu apellido"
                         required>
+                    <label for="email-register">Correo</label>
+                    <input type="email" id="email-registerModificar" name="email-register"
+                        placeholder="Correo electrónico" required>
                     <label for="edad">Edad</label>
-                    <input type="text" id="edad" name="edad" placeholder="edad" required>
+                    <input type="text" id="edadModificar" name="edad" placeholder="edad" required>
                     <label for="password-anterior">Contraseña anterior</label>
-                    <input type="password" id="password-anterior" name="password" placeholder="Contraseña" required>
-                    <label for="password-register">Contraseña</label>
-                    <input type="password" id="password-register" name="password" placeholder="Contraseña" required>
+                    <input type="password" id="password-anterior" name="password" placeholder="Contraseña anterior"
+                        required>
+                    <label for="password-register">Contraseña nueva</label>
+                    <input type="password" id="password-registerModificar" name="password"
+                        placeholder="Contraseña nueva" required>
                     <label for="password-confiRegister">Confirmar contraseña</label>
-                    <input type="password" id="password-confRegister" name="passwordConf"
+                    <input type="password" id="password-confRegisterModificar" name="confirma contraseña nueva"
                         placeholder="confirma tu contraseña" required>
-                    <button type="submit" class="btn">Cancelar</button>
-                    <button type="submit" class="btn">Modificar</button>
+                    <div class="bottModificar">
+                        <button type="button" class="btn">Cancelar</button>
+                        <button type="submit" class="btn">Modificar</button>
+                    </div>
                 </form>
-                <p class="error-p">EEEE</p>
+                <p class="error-p"></p>
             </div>
-        </div> -->
-        <!-- <div class="modal modal-notas"></div> -->
+        </div>
+
+        <div class="modal-notas modal-hidden">
+            <div class="cont-modal">
+                <form id="formModificarNotas" class="diferente">
+                    <h2 class="subtitle">Modificar Nota</h2>
+                    <label for="note-title-input">
+                        <span>Titulo de la nota</span>
+                        <input type="text" id="mod-note-title-input" required placeholder="Colocale un titulo a la nota">
+                    </label>
+    
+                    <label for="note-desc-input">
+                        <span>Descripción de la nota</span>
+                        <textarea id="mod-note-desc-input" required placeholder="Haz una descripción de la nota"></textarea>
+                    </label>
+                    <div class="bottModificar">
+                        <button type="button" class="btn-2">cancelar</button>
+                        <button type="submit" class="btn-2">Actualizar</button>
+                    </div>
+                </form>
+
+            </div>
+        </div>
 
     </main>
     <script type="module" src="./js/index.js" defer></script>

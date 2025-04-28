@@ -80,20 +80,43 @@ main {
     left: 0;
     top: 0;
     z-index: 1;
+    visibility: visible;
+
+    .cont-modal {
+      display: flex;
+      flex-direction: column;
+      max-width: 50vh;
+      background-color: white;
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 10px 15px 10px rgba(0, 0, 0, 0.2);
+      z-index: 2;
+      align-items: center;
+      transition: transform 0.3s ease, background-color 0.3s ease;
+      transform: scaleY(1);
+
+      .bottModificar {
+        display: flex;
+        justify-content: space-between;
+        gap: 10px;
+      }
+      
+      
+      @extend %formulario;
+  
+    }
+
+    &.modal-hidden {
+      background-color: transparent;
+      visibility: hidden;
+      transition: background-color 0.3s, visibility 0s 0.3s;
+
+      .cont-modal {
+        transform: scaleY(0);
+      }
+    }
+
   }
 
-  .cont-modal {
-    display: flex;
-    flex-direction: column;
-    max-width: 50vh;
-    background-color: white;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 10px 15px 10px rgba(0, 0, 0, 0.2);
-    z-index: 2;
-    
-    @extend %formulario;
-
-  }
 
 }

@@ -10,7 +10,7 @@ const elementos = {
     divContainer: document.getElementById("container"),
     divNote: document.querySelector("#cont-notes"),
     formNote: document.getElementById("form-notes"),
-    cardNote: document.querySelector(".memo"),
+    cardNote: document.querySelector("#notes"),
   
     // elementos del login
     sectionLogin: document.getElementById("iniciarSeccion"),
@@ -39,8 +39,8 @@ const elementos = {
     nombrePerfil: document.querySelector("#perfil .subtitle"),
     imagenPerfil: document.getElementById("imgChange"),
     btnCambiarDatos: document.getElementById("btn-cambiar"),
-    btnGuardar: document.getElementById("btn-guardar"),
-    btnCancelar: document.getElementById("btn-cancelar"),
+    btnDataGuardar: document.getElementById("btn-guardar"),
+    btnDataCancelar: document.getElementById("btn-cancelar"),
 
     // Elementos Notas
     formNotas: document.getElementById("form-notes"),
@@ -48,7 +48,30 @@ const elementos = {
     inputDescriptionNota: document.getElementById("note-desc-input"),
     categoriaNotas: document.getElementById("agruparNotas"),
     groupNotes: document.getElementById("notes"),
-  
-  }
+
+    // modal modificar datos
+
+    modalDatos: document.querySelector(".modal-datos"),
+    formModalDatos: document.querySelector(".modal-datos form"),
+    nombreModificar: document.getElementById("nombreModificar"),
+    apellidoModificar: document.getElementById("apellidoModificar"),
+    emailModificar: document.getElementById("email-registerModificar"),
+    edadModificar: document.getElementById("edadModificar"),
+    contraseñaAnterior: document.getElementById("password-anterior"),
+    contraseñaModificar: document.getElementById("password-registerModificar"),
+    confiContraseñaModificar: document.getElementById("password-confRegisterModificar"),
+    pErrorpModificar: document.querySelector(".modal-datos .error-p"),
+    cancelarModificar: document.querySelector(".modal-datos form .btn[type='button']"),
+    cancelarDatos: document.querySelector(".modal-datos .cont-modal form .btn[type='button']"),
+
+    // modal modificar notas
+    modalNotas: document.querySelector(".modal-notas"),
+    formModalNotas: document.querySelector(".modal-notas form"),
+    tituloNotaModificar: document.getElementById("mod-note-title-input"),
+    descripcionNotaModificar: document.getElementById("mod-note-desc-input"),
+    cancelarNotaModificar: document.querySelector(".modal-notas form .btn-2[type='button']")
+
+  };
+
 
   export default elementos;

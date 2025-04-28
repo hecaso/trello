@@ -3,9 +3,10 @@ import elementos from "../utils/elementos.js";
 import controlador_vista from "../utils/controlador.js";
 // import sistema_usuario from "../utils/sistema_usuarios.js";
 import {registrarUsuario, ingresarUsuario} from "../utils/sistema_usuarios.js";
-import {cambiarDatos, cancelarCambioFoto, guardarCambioFoto} from "../utils/sistema_fotos.js";
+import {cambiarFoto } from "../utils/sistema_fotos.js";
 import * as irA from  "../utils/sistema_vistas_simples.js";
-import { cambiarEstadoNota, cambiarNota, crearNotas, filtrarNotas } from "../clases/sistema_notas.js";
+import { cambiarEstadoNota, cambiarNota, cancelarModificarNota, crearNotas, filtrarNotas, modificarNota } from "../clases/sistema_notas.js";
+import { guardarDatos, cancelarDatos, cambiarDatos, cancelarModificar, aceptarModificacion} from "../utils/sistema_modificar.js";
 
 
 // import { filtrarNotas } from "../clases/sistema_notas.js";
@@ -74,13 +75,18 @@ elementos.formLogin.addEventListener("submit", ingresarUsuario);
 
 
 
-elementos.btnCancelar.addEventListener("click", cancelarCambioFoto);
+elementos.btnDataCancelar.addEventListener("click", cancelarDatos);
 
-elementos.headerLiConfig.addEventListener("click", irA.configuracion )
+elementos.headerLiConfig.addEventListener("click", irA.configuracion );
 
-elementos.headerLiExit.addEventListener("click", irA.salir )
+elementos.headerLiExit.addEventListener("click", irA.salir );
+
+elementos.imagenPerfil.addEventListener("click", cambiarFoto);
 
 elementos.btnCambiarDatos.addEventListener("click", cambiarDatos);
+elementos.cancelarDatos.addEventListener("click", cancelarModificar);
+// elementos.cancelarDatos.addEventListener("click", cancelarModificar);
+elementos.formModalDatos.addEventListener("submit", aceptarModificacion);
 
 // elementos.btnGuardar.addEventListener("click",
 //     () => {
@@ -96,9 +102,12 @@ elementos.btnCambiarDatos.addEventListener("click", cambiarDatos);
 //     }
 // )
 
-elementos.btnGuardar.addEventListener("click", guardarCambioFoto);
+elementos.btnDataGuardar.addEventListener("click", guardarDatos);
 elementos.formNotas.addEventListener("submit", crearNotas);
 elementos.categoriaNotas.addEventListener("change",filtrarNotas);
 
 elementos.groupNotes.addEventListener("change", cambiarEstadoNota);
 elementos.groupNotes.addEventListener("click", cambiarNota);
+
+elementos.formModalNotas.addEventListener("submit", modificarNota);
+elementos.cancelarNotaModificar.addEventListener("click", cancelarModificarNota);

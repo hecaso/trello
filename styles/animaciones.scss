@@ -11,11 +11,11 @@
 }
 
 .hide-note {
-  animation: hide-cont-note .5s ease 1s normal forwards;
+  animation: hide-cont-note .5s ease .5s normal forwards;
 }
 
 .show-note > div {
-  animation: show-note .5s ease 1s normal backwards;
+  animation: show-note .5s ease .5s normal backwards;
 }
 
 .hide-note > div {

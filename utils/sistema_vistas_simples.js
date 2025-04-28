@@ -4,6 +4,12 @@ import { usuario } from "./sistema_usuarios.js";
 import { limpiarNotas  } from "../clases/sistema_notas.js";
 
 export function configuracion() {
+
+    for (const clave in usuario.actual) {
+        usuario.temporal[clave] = usuario.actual[clave];
+    }
+    // console.log(usuario)
+    
     elementos.imagenPerfil.src = usuario.actual.foto;
     elementos.nombrePerfil.textContent = usuario.actual.nombre.replaceAll("&#60","<").replaceAll("&#62",">")+ " " +usuario.actual.apellido.replaceAll("&#60","<").replaceAll("&#62",">");
     
@@ -19,12 +25,13 @@ export function configuracion() {
             elementos.header.querySelector("nav").classList.remove("hide-list")
         }, 600);
     }, 2000);
+
 }
 
 export function salir() {
     usuario.actual = {};
     elementos.nombreRegister.textContent = "";
-    elementos.imagenPerfil.src;
+    elementos.imagenPerfil.src = "";
     
     // imagenPerfil.style.backgroundImage = `url(${controlador_vista.usuario_actual.foto})`;
     limpiarNotas();

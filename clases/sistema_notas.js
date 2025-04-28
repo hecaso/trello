@@ -32,8 +32,8 @@ export function crearNotas(event) {
 
     const nuevaNota = new Nota(
         // baseNotas.length,
-        titulo.replaceAll("<", "&#60").replaceAll(">", "&#62"),
-        descripcion.replaceAll("<", "&#60").replaceAll(">", "&#62"),
+        titulo.replaceAll("<", "&#60;").replaceAll(">", "&#62;"),
+        descripcion.replaceAll("<", "&#60;").replaceAll(">", "&#62;"),
         usuario.actual.correo
     );
 
@@ -48,7 +48,7 @@ export function crearNotas(event) {
     setTimeout(() => {
         elementos.formNotas.reset();
         crearHTMLNota(nuevaNota);
-    }, 500);
+    }, 1000);
 }
 
 export function traerNotas(quien) {
@@ -141,7 +141,7 @@ function crearHTMLNota(...notas) {
 
         setTimeout(() => {
             document.getElementById(`nota${id}`).className = "memo";
-        }, 2000);
+        }, 1000);
         // }
     }
 
@@ -256,7 +256,8 @@ export function cambiarNota(event) {
 
 
     if(etiqueta.className == "btn-modificar-nota") {
-        modificarNota();
+        desplegarModificarNota(idNota, indiceNotaExiste, baseNotas);
+       
     }
 
     if(etiqueta.className == "btn-borrar-nota") {
@@ -264,10 +265,75 @@ export function cambiarNota(event) {
     }
 } 
 
-
-function modificarNota() {
-    console.log("estoy modificando")
+function desplegarModificarNota(idNota, posicionNota, baseNotas) {
+    elementos.modalNotas.classList.remove("modal-hidden");
+    elementos.tituloNotaModificar.value = baseNotas[posicionNota].titulo;
+    elementos.descripcionNotaModificar.value = baseNotas[posicionNota].descripcion;
+    elementos.modalNotas.classList.add(`nota${idNota}`);
 }
+
+export function modificarNota(event) {
+    event.preventDefault()
+
+const baseNotasExiste = localStorage.getItem("Notas");
+const baseNotas = baseNotasExiste ? JSON.parse(baseNotasExiste) : [];
+
+if (!baseNotas.length) { // que pasa aqui???
+    alert("Error al acceder a la base de datos");
+    return;
+}
+
+let idNota = "";
+
+for (const clase of elementos.modalNotas.classList) {
+    if(clase.startsWith("nota")) {
+        idNota = clase;
+        elementos.modalNotas.classList.remove(clase);
+    }
+}
+
+const indiceNotaExiste = baseNotas.findIndex(not => not.id == idNota.replace("nota",""));
+
+if(indiceNotaExiste == -1) {
+    alert("La nota que desea modificar ya no existe");
+    return;
+}
+
+baseNotas[indiceNotaExiste].titulo = elementos.tituloNotaModificar.value.replaceAll("<","!&#60;").replaceAll(">","&#62");
+baseNotas[indiceNotaExiste].descripcion = elementos.descripcionNotaModificar.value.replaceAll("<","!&#60;").replaceAll(">","&#62");
+localStorage.setItem("Notas", JSON.stringify(baseNotas));
+
+const notaHTML = document.getElementById(idNota);
+
+elementos.modalNotas.classList.add("modal-hidden")
+
+setTimeout(() => {
+    elementos.formModalNotas.reset();
+
+    animarNotaEspecifica (htmlNota, false);
+    setTimeout(() => {
+        htmlNota.querySelector("strong").textContent = baseNotas[indiceNotaExiste].titulo;
+        htmlNota.querySelector("p").textContent = baseNotas[indiceNotaExiste].descripcion;
+        animarNotaEspecifica(htmlNota, true)
+    }, 1000);
+    
+}, 1000);
+
+    
+}
+
+export function cancelarModificarNota() {
+    elementos.modalNotas.classList.add("modal-hidden");
+    for (const clase of elementos.modalNotas.classList) {
+        if (clase.startsWith("nota")) {
+            elementos.modalNotas.classList.remove(clase);
+        }
+    }
+    setTimeout(() => {
+        elementos.formModalNotas.reset();
+    }, 300);
+}
+
 function borrarNota(elementoNota, idNota, posicionNota, baseNotas){
     baseNotas.splice(posicionNota,1);
     localStorage.setItem("Notas", JSON.stringify(baseNotas));
@@ -275,7 +341,7 @@ function borrarNota(elementoNota, idNota, posicionNota, baseNotas){
     animarNotaEspecifica(elementoNota,false);
     setTimeout(() => {
        document.getElementById(`nota${idNota}`).remove(); 
-    }, 600);
+    }, 1000);
 } 
 
 function animarNotaEspecifica(cual, quiero_mostrar) {
@@ -288,7 +354,7 @@ function animarNotaEspecifica(cual, quiero_mostrar) {
         // si ya se animo, le quito la clase
         setTimeout(() => {
             cual.className = "memo show-note";
-        }, 2000);
+        }, 1000);
     } else {
         // si ya tiene la calse no animar
         if (cual.className == "memo hide-note") return;
@@ -297,7 +363,7 @@ function animarNotaEspecifica(cual, quiero_mostrar) {
         // si ya se animo lq quito la clase
         setTimeout(() => {
             cual.className = "memo hide-note";
-        }, 2000);
+        }, 1000);
     }
 }
 
