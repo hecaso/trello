@@ -303,7 +303,7 @@ baseNotas[indiceNotaExiste].titulo = elementos.tituloNotaModificar.value.replace
 baseNotas[indiceNotaExiste].descripcion = elementos.descripcionNotaModificar.value.replaceAll("<","!&#60;").replaceAll(">","&#62");
 localStorage.setItem("Notas", JSON.stringify(baseNotas));
 
-const notaHTML = document.getElementById(idNota);
+const htmlNota = document.getElementById(idNota);
 
 elementos.modalNotas.classList.add("modal-hidden")
 

@@ -126,7 +126,7 @@ header nav ul li:hover {
   border-radius: var(--redondes);
 }
 
-main .container section form, main .modal-datos .cont-modal form, main .modal-notas .cont-modal form {
+main .container section form, main .modal-datos .cont-modal form, main .modal-notas .cont-modal form, main .modal-image .cont-modal form {
   width: 100%;
   max-width: 50vw;
   display: flex;
@@ -135,13 +135,13 @@ main .container section form, main .modal-datos .cont-modal form, main .modal-no
   align-items: center;
   gap: 0.2rem;
 }
-main .container section form h2, main .modal-datos .cont-modal form h2, main .modal-notas .cont-modal form h2 {
+main .container section form h2, main .modal-datos .cont-modal form h2, main .modal-notas .cont-modal form h2, main .modal-image .cont-modal form h2 {
   font-size: 2rem;
   text-align: center;
   color: var(--secondary-color);
   font-size: 3rem;
 }
-main .container section form label, main .modal-datos .cont-modal form label, main .modal-notas .cont-modal form label {
+main .container section form label, main .modal-datos .cont-modal form label, main .modal-notas .cont-modal form label, main .modal-image .cont-modal form label {
   width: 100%;
   font-size: 2.5vh;
   margin-top: 0.5rem;
@@ -150,10 +150,11 @@ main .container section form label, main .modal-datos .cont-modal form label, ma
   flex-direction: column;
   align-items: center;
 }
-main .container section form input, main .modal-datos .cont-modal form input, main .modal-notas .cont-modal form input,
+main .container section form input, main .modal-datos .cont-modal form input, main .modal-notas .cont-modal form input, main .modal-image .cont-modal form input,
 main .container section form textarea,
 main .modal-datos .cont-modal form textarea,
-main .modal-notas .cont-modal form textarea {
+main .modal-notas .cont-modal form textarea,
+main .modal-image .cont-modal form textarea {
   width: 100%;
   padding: 1vh;
   border-radius: var(--redondes);
@@ -162,15 +163,16 @@ main .modal-notas .cont-modal form textarea {
   font-size: 1.5rem;
   resize: vertical;
 }
-main .container section form input:hover, main .modal-datos .cont-modal form input:hover, main .modal-notas .cont-modal form input:hover,
+main .container section form input:hover, main .modal-datos .cont-modal form input:hover, main .modal-notas .cont-modal form input:hover, main .modal-image .cont-modal form input:hover,
 main .container section form textarea:hover,
 main .modal-datos .cont-modal form textarea:hover,
-main .modal-notas .cont-modal form textarea:hover {
+main .modal-notas .cont-modal form textarea:hover,
+main .modal-image .cont-modal form textarea:hover {
   border: none;
   background-color: var(--secondary-color);
   transform: scale(1.05);
 }
-main .container section form .botones, main .modal-datos .cont-modal form .botones, main .modal-notas .cont-modal form .botones {
+main .container section form .botones, main .modal-datos .cont-modal form .botones, main .modal-notas .cont-modal form .botones, main .modal-image .cont-modal form .botones {
   width: 100vw;
   display: flex;
   flex-direction: column;
@@ -179,11 +181,11 @@ main .container section form .botones, main .modal-datos .cont-modal form .boton
   gap: 10px;
   margin-bottom: 10px;
 }
-main .container section form .botones .cambiar, main .modal-datos .cont-modal form .botones .cambiar, main .modal-notas .cont-modal form .botones .cambiar {
+main .container section form .botones .cambiar, main .modal-datos .cont-modal form .botones .cambiar, main .modal-notas .cont-modal form .botones .cambiar, main .modal-image .cont-modal form .botones .cambiar {
   width: 50vw;
   display: flex;
 }
-main .container section form .botones .cambiar .btn-cambiar, main .modal-datos .cont-modal form .botones .cambiar .btn-cambiar, main .modal-notas .cont-modal form .botones .cambiar .btn-cambiar {
+main .container section form .botones .cambiar .btn-cambiar, main .modal-datos .cont-modal form .botones .cambiar .btn-cambiar, main .modal-notas .cont-modal form .botones .cambiar .btn-cambiar, main .modal-image .cont-modal form .botones .cambiar .btn-cambiar {
   font-size: 2vw;
   width: 100%;
   border-radius: var(--redondes);
@@ -193,17 +195,17 @@ main .container section form .botones .cambiar .btn-cambiar, main .modal-datos .
   background-color: var(--secondary-color);
   cursor: pointer;
 }
-main .container section form .botones .cambiar .btn-cambiar:hover, main .modal-datos .cont-modal form .botones .cambiar .btn-cambiar:hover, main .modal-notas .cont-modal form .botones .cambiar .btn-cambiar:hover {
+main .container section form .botones .cambiar .btn-cambiar:hover, main .modal-datos .cont-modal form .botones .cambiar .btn-cambiar:hover, main .modal-notas .cont-modal form .botones .cambiar .btn-cambiar:hover, main .modal-image .cont-modal form .botones .cambiar .btn-cambiar:hover {
   background-color: var(--primary-color);
   border: 0.2rem solid var(--secondary-color);
   color: var(--secondary-color);
 }
-main .container section form .botones .otros_cambiar, main .modal-datos .cont-modal form .botones .otros_cambiar, main .modal-notas .cont-modal form .botones .otros_cambiar {
+main .container section form .botones .otros_cambiar, main .modal-datos .cont-modal form .botones .otros_cambiar, main .modal-notas .cont-modal form .botones .otros_cambiar, main .modal-image .cont-modal form .botones .otros_cambiar {
   width: 50vw;
   display: flex;
   gap: 20px;
 }
-main .container section form .btn, main .modal-datos .cont-modal form .btn, main .modal-notas .cont-modal form .btn {
+main .container section form .btn, main .modal-datos .cont-modal form .btn, main .modal-notas .cont-modal form .btn, main .modal-image .cont-modal form .btn {
   width: 100%;
   border-radius: var(--redondes);
   border: none;
@@ -214,12 +216,12 @@ main .container section form .btn, main .modal-datos .cont-modal form .btn, main
   margin-top: 15px;
   cursor: pointer;
 }
-main .container section form .btn:hover, main .modal-datos .cont-modal form .btn:hover, main .modal-notas .cont-modal form .btn:hover {
+main .container section form .btn:hover, main .modal-datos .cont-modal form .btn:hover, main .modal-notas .cont-modal form .btn:hover, main .modal-image .cont-modal form .btn:hover {
   background-color: var(--secondary-color);
   border: 0.2rem solid var(--primary-color);
   color: var(--primary-color);
 }
-main .container section form #imgChange, main .modal-datos .cont-modal form #imgChange, main .modal-notas .cont-modal form #imgChange {
+main .container section form #imgChange, main .modal-datos .cont-modal form #imgChange, main .modal-notas .cont-modal form #imgChange, main .modal-image .cont-modal form #imgChange {
   width: 40%;
   aspect-ratio: 1;
   align-self: center;
@@ -228,7 +230,7 @@ main .container section form #imgChange, main .modal-datos .cont-modal form #img
   margin: auto;
   background-color: var(--primary-color);
 }
-main .container section form .btn-2, main .modal-datos .cont-modal form .btn-2, main .modal-notas .cont-modal form .btn-2 {
+main .container section form .btn-2, main .modal-datos .cont-modal form .btn-2, main .modal-notas .cont-modal form .btn-2, main .modal-image .cont-modal form .btn-2 {
   width: 100%;
   border-radius: 10px;
   border: none;
@@ -238,17 +240,17 @@ main .container section form .btn-2, main .modal-datos .cont-modal form .btn-2, 
   font-size: 2vw;
   margin-top: 1rem;
 }
-main .container section form .btn-2:hover, main .modal-datos .cont-modal form .btn-2:hover, main .modal-notas .cont-modal form .btn-2:hover {
+main .container section form .btn-2:hover, main .modal-datos .cont-modal form .btn-2:hover, main .modal-notas .cont-modal form .btn-2:hover, main .modal-image .cont-modal form .btn-2:hover {
   background-color: var(--primary-color);
   border: 1px solid var(--secondary-color);
   color: var(--secondary-color);
 }
-main .container section .error-p, main .modal-datos .cont-modal .error-p, main .modal-notas .cont-modal .error-p {
+main .container section .error-p, main .modal-datos .cont-modal .error-p, main .modal-notas .cont-modal .error-p, main .modal-image .cont-modal .error-p {
   color: red;
   font-size: 2rem;
   text-align: center;
 }
-main .container section .error-p + a, main .modal-datos .cont-modal .error-p + a, main .modal-notas .cont-modal .error-p + a {
+main .container section .error-p + a, main .modal-datos .cont-modal .error-p + a, main .modal-notas .cont-modal .error-p + a, main .modal-image .cont-modal .error-p + a {
   width: 100%;
   color: var(--secondary-color);
   font-weight: 700;
@@ -471,7 +473,7 @@ main .notes {
   border-radius: var(--redondes);
   padding: 10rem;
 }
-main .modal-datos, main .modal-notas {
+main .modal-datos, main .modal-notas, main .modal-image {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -484,7 +486,7 @@ main .modal-datos, main .modal-notas {
   z-index: 1;
   visibility: visible;
 }
-main .modal-datos .cont-modal, main .modal-notas .cont-modal {
+main .modal-datos .cont-modal, main .modal-notas .cont-modal, main .modal-image .cont-modal {
   display: flex;
   flex-direction: column;
   max-width: 50vh;
@@ -497,17 +499,17 @@ main .modal-datos .cont-modal, main .modal-notas .cont-modal {
   transition: transform 0.3s ease, background-color 0.3s ease;
   transform: scaleY(1);
 }
-main .modal-datos .cont-modal .bottModificar, main .modal-notas .cont-modal .bottModificar {
+main .modal-datos .cont-modal .bottModificar, main .modal-notas .cont-modal .bottModificar, main .modal-image .cont-modal .bottModificar {
   display: flex;
   justify-content: space-between;
   gap: 10px;
 }
-main .modal-datos.modal-hidden, main .modal-notas.modal-hidden {
+main .modal-datos.modal-hidden, main .modal-notas.modal-hidden, main .modal-image.modal-hidden {
   background-color: transparent;
   visibility: hidden;
   transition: background-color 0.3s, visibility 0s 0.3s;
 }
-main .modal-datos.modal-hidden .cont-modal, main .modal-notas.modal-hidden .cont-modal {
+main .modal-datos.modal-hidden .cont-modal, main .modal-notas.modal-hidden .cont-modal, main .modal-image.modal-hidden .cont-modal {
   transform: scaleY(0);
 }
 
@@ -669,6 +671,15 @@ main .modal-datos.modal-hidden .cont-modal, main .modal-notas.modal-hidden .cont
     height: 10vh;
     text-align: center;
     color: var(--secondary-color);
+  }
+  #initSection .subtitle {
+    font-size: 2rem;
+  }
+  .perfil .subtitle {
+    font-size: 2.5rem;
+  }
+  .perfil .botones .btn-cambiar {
+    font-size: 2rem;
   }
 }
 

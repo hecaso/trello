@@ -3,10 +3,10 @@ import elementos from "../utils/elementos.js";
 import controlador_vista from "../utils/controlador.js";
 // import sistema_usuario from "../utils/sistema_usuarios.js";
 import {registrarUsuario, ingresarUsuario} from "../utils/sistema_usuarios.js";
-import {cambiarFoto } from "../utils/sistema_fotos.js";
+import {cambiarFoto, cambiarFotoUrl, cancelarModificarFoto, aceptarModificacionFoto, cambiarFotoFile } from "../utils/sistema_fotos.js";
 import * as irA from  "../utils/sistema_vistas_simples.js";
 import { cambiarEstadoNota, cambiarNota, cancelarModificarNota, crearNotas, filtrarNotas, modificarNota } from "../clases/sistema_notas.js";
-import { guardarDatos, cancelarDatos, cambiarDatos, cancelarModificar, aceptarModificacion} from "../utils/sistema_modificar.js";
+import { guardarDatos, cancelarDatos, cambiarDatos, cancelarModificar, aceptarModificacion } from "../utils/sistema_modificar.js";
 
 
 // import { filtrarNotas } from "../clases/sistema_notas.js";
@@ -111,3 +111,9 @@ elementos.groupNotes.addEventListener("click", cambiarNota);
 
 elementos.formModalNotas.addEventListener("submit", modificarNota);
 elementos.cancelarNotaModificar.addEventListener("click", cancelarModificarNota);
+elementos.btnCancelarChangeImage.addEventListener("click", cancelarModificarFoto);
+elementos.btnChangeUrlFoto.addEventListener("click", cambiarFotoUrl);
+elementos.btnChangeFileFoto.addEventListener("change", cambiarFotoFile);
+
+elementos.formModalFoto.addEventListener("submit", aceptarModificacionFoto);
+

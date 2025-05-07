@@ -69,7 +69,7 @@ main {
     @extend %nota;
   }
 
-  .modal-datos, .modal-notas {
+  .modal-datos, .modal-notas, .modal-image {
     display: flex;
     justify-content: center;
     align-items: center;

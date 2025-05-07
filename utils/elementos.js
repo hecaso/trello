@@ -69,9 +69,18 @@ const elementos = {
     formModalNotas: document.querySelector(".modal-notas form"),
     tituloNotaModificar: document.getElementById("mod-note-title-input"),
     descripcionNotaModificar: document.getElementById("mod-note-desc-input"),
-    cancelarNotaModificar: document.querySelector(".modal-notas form .btn-2[type='button']")
+    cancelarNotaModificar: document.querySelector(".modal-notas form .btn-2[type='button']"),
+
+    // modal modificar foto
+    modalFoto: document.querySelector(".modal-image"),
+    formModalFoto: document.querySelector(".modal-image form"),
+    btnChangeUrlFoto: document.getElementById("btnChangeUrl"),
+    btnChangeFileFoto: document.getElementById("inputChangeFile"),
+    changeImagePreview: document.querySelector(".modal-image form img"),
+    btnCancelarChangeImage: document.querySelector(".modal-image form div button[type='button")
 
   };
 
+// console.log(elementos)
 
   export default elementos;
